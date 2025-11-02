@@ -1,0 +1,510 @@
+/* ============================================
+   CUSTOM MODERN DESIGN ENHANCEMENTS
+   Portfolio by Noel Raterta Jr.
+   ============================================ */
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(30, 48, 243, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(30, 48, 243, 0.6);
+    }
+}
+
+/* === GRADIENT BACKGROUNDS === */
+.gradient-bg-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg-2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gradient-bg-3 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.gradient-bg-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-bg-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: float 20s infinite linear;
+}
+
+/* === MODERN CARDS === */
+.modern-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.modern-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.modern-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(30, 48, 243, 0.1) 0%, rgba(226, 30, 128, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modern-card:hover::before {
+    opacity: 1;
+}
+
+/* === PROFILE IMAGE EFFECTS === */
+.profile-enhanced {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+.profile-enhanced::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #1e30f3, #e21e80, #1e30f3);
+    border-radius: 50%;
+    z-index: -1;
+    animation: glow 3s ease-in-out infinite;
+    filter: blur(20px);
+}
+
+/* === SECTION HEADERS === */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #1e30f3, transparent);
+    border-radius: 2px;
+}
+
+/* === SKILL BARS === */
+.skill-bar {
+    height: 12px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1e30f3 0%, #e21e80 100%);
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* === BADGES & TAGS === */
+.tech-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.tech-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* === GITHUB STATS CONTAINER === */
+.stats-container {
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(30, 48, 243, 0.05) 0%, rgba(226, 30, 128, 0.05) 100%);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.stats-container img {
+    border-radius: 15px;
+    transition: all 0.4s ease;
+}
+
+.stats-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(30, 48, 243, 0.3);
+}
+
+/* === TIMELINE === */
+.timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #1e30f3, #e21e80);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(30, 48, 243, 0.2);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 20px;
+    width: 2px;
+    height: calc(100% + 10px);
+    background: linear-gradient(180deg, #1e30f3, transparent);
+}
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+/* === BUTTON ENHANCEMENTS === */
+.btn-modern {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+}
+
+.btn-modern::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-modern:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* === FLOATING ELEMENTS === */
+.float-element {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* === NAVBAR ENHANCEMENTS === */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #1e30f3, #e21e80);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+/* === ICON CONTAINERS === */
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.icon-wrapper:hover {
+    transform: translateY(-5px) rotate(5deg);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+}
+
+.icon-wrapper i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* === SOCIAL LINKS === */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.social-link:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+    color: white;
+}
+
+/* === PROJECT CARDS === */
+.project-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: white;
+    border: 2px solid transparent;
+}
+
+.project-card:hover {
+    border-color: #1e30f3;
+    transform: translateY(-5px);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(30, 48, 243, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.project-card:hover::before {
+    left: 100%;
+}
+
+/* === FORM ENHANCEMENTS === */
+.form-control:focus {
+    border-color: #1e30f3;
+    box-shadow: 0 0 0 0.2rem rgba(30, 48, 243, 0.25);
+}
+
+.form-floating > label {
+    color: #6c757d;
+}
+
+.form-floating > .form-control:focus ~ label {
+    color: #1e30f3;
+}
+
+/* === LOADING SPINNER === */
+.spinner-custom {
+    border: 3px solid rgba(30, 48, 243, 0.1);
+    border-top: 3px solid #1e30f3;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* === RESPONSIVE ANIMATIONS === */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === FOOTER ENHANCEMENTS === */
+footer {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* === GLASS MORPHISM EFFECT === */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+
+/* === TOOLTIP ENHANCEMENTS === */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    margin-bottom: 5px;
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 768px) {
+    .modern-card {
+        margin-bottom: 20px;
+    }
+    
+    .profile-enhanced {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .stats-container {
+        padding: 15px;
+    }
+}
+
+/* === PRINT STYLES === */
+@media print {
+    .navbar, footer, .btn, .social-link {
+        display: none !important;
+    }
+}

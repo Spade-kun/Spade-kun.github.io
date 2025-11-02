@@ -29,12 +29,19 @@ const observer = new IntersectionObserver(function(entries) {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('animated');
         }
     });
 }, observerOptions);
 
 // Observe all cards and sections
 document.addEventListener('DOMContentLoaded', function() {
+    // Animate elements on scroll
+    const animateElements = document.querySelectorAll('.animate-on-scroll, .modern-card, .stats-container, .project-card');
+    animateElements.forEach(el => {
+        observer.observe(el);
+    });
+
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.style.opacity = '0';
