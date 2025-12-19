@@ -2,511 +2,686 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Noel Raterta Jr. - Full Stack Developer Portfolio. Specializing in web development, Android development, and creating innovative solutions using modern technologies." />
-    <meta name="author" content="Noel Raterta Jr." />
-    <meta name="keywords" content="Noel Raterta, Web Developer, Full Stack Developer, Laravel, React, Android Development, Portfolio, GitHub" />
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Noel Raterta Jr. - Portfolio" />
-    <meta property="og:description" content="Full Stack Developer specializing in web and Android development" />
+    <!-- Primary SEO Meta Tags -->
+    <title>Noel C. Raterta Jr. | Full-Stack Developer & Software Engineer</title>
+    <meta name="title" content="Noel C. Raterta Jr. | Full-Stack Developer & Software Engineer" />
+    <meta name="description" content="Full-stack developer specializing in Laravel, PHP, Java, Python, and modern web technologies. Building scalable web applications, mobile apps, and API integrations. Based in Malaybalay City, Bukidnon, Philippines." />
+    <meta name="keywords" content="Noel Raterta, Full Stack Developer, Web Developer, Laravel Developer, PHP Developer, Java Developer, Python Developer, Android Developer, Software Engineer, Freelance Developer, Bukidnon Developer, API Integration, MySQL, MongoDB, Portfolio" />
+    <meta name="author" content="Noel C. Raterta Jr." />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://spade-kun.github.io/" />
+    <meta property="og:title" content="Noel C. Raterta Jr. | Full-Stack Developer" />
+    <meta property="og:description" content="Full-stack developer specializing in Laravel, PHP, Java, Python, and modern web technologies. Building scalable solutions and innovative applications." />
+    <meta property="og:site_name" content="Noel Raterta Portfolio" />
+    <meta property="og:locale" content="en_US" />
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Noel Raterta Jr. - Portfolio" />
-    <meta name="twitter:description" content="Full Stack Developer specializing in web and Android development" />
+    <meta name="twitter:url" content="https://spade-kun.github.io/" />
+    <meta name="twitter:title" content="Noel C. Raterta Jr. | Full-Stack Developer" />
+    <meta name="twitter:description" content="Full-stack developer building scalable web applications and mobile apps with modern technologies." />
     
-    <title>Noel Raterta Jr. - Portfolio</title>
-    <!-- Favicon-->
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://spade-kun.github.io/" />
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Custom Google font-->
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet" />
-    <!-- Bootstrap icons-->
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <!-- Custom Stylesheet -->
     <link href="css/styles.css" rel="stylesheet" />
-    <!-- Custom Modern CSS -->
-    <link href="css/custom.css" rel="stylesheet" />
+    
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Noel C. Raterta Jr.",
+      "url": "https://spade-kun.github.io/",
+      "jobTitle": "Full-Stack Developer",
+      "alumniOf": "Bukidnon State University",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Malaybalay City",
+        "addressRegion": "Bukidnon",
+        "addressCountry": "Philippines"
+      },
+      "email": "noelratertajr@gmail.com",
+      "sameAs": [
+        "https://github.com/Spade-kun"
+      ]
+    }
+    </script>
 </head>
 
-<body class="d-flex flex-column h-100" style="overflow-x: hidden;">
-    <main class="flex-shrink-0">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-            <div class="container px-5">
-                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">My Portfolio</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav">
+        <div class="container">
+            <a href="#hero" class="nav-brand">&lt;Noel<span class="accent">/</span>&gt;</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="bi bi-code-slash"></i>
+                    <span>Full-Stack Developer</span>
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="accent-text">Noel C. Raterta Jr.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Building elegant <span class="typed-text"></span>
+                </p>
+                <p class="hero-description">
+                    Passionate full-stack developer specializing in Laravel, PHP, Java, and modern web technologies. 
+                    Transforming ideas into scalable digital solutions.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="bi bi-envelope"></i>
+                        Get In Touch
+                    </a>
+                    <a href="#projects" class="btn btn-outline">
+                        <i class="bi bi-folder"></i>
+                        View Projects
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/Spade-kun" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="mailto:noelratertajr@gmail.com" aria-label="Email">
+                        <i class="bi bi-envelope"></i>
+                    </a>
                 </div>
             </div>
-        </nav>
-        <!-- Header-->
-        <header class="py-5 gradient-bg-hero" style="min-height: 100vh; display: flex; align-items: center;">
-            <div class="container px-5 pb-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-xxl-5">
-                        <!-- Header text content-->
-                        <div class="text-center text-xxl-start" style="animation: fadeInUp 1s ease;">
-                            <div class="badge bg-white text-primary mb-4 shadow" style="padding: 12px 24px; font-size: 0.9rem;">
-                                <div class="text-uppercase fw-bold">
-                                    <i class="bi bi-code-slash me-2"></i>Backend · Frontend · Mobile Developer
-                                </div>
-                            </div>
-                            <div class="fs-3 fw-light text-white mb-3" style="animation: fadeInUp 1.2s ease;">
-                                👋 Hi, I'm Noel Raterta Jr.
-                            </div>
-                            <h1 class="display-3 fw-bolder mb-4 text-white" style="animation: fadeInUp 1.4s ease; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
-                                <span class="d-inline">Building Digital Solutions</span><br>
-                                <span class="d-inline" style="background: linear-gradient(90deg, #ffd700, #ffed4e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                                    That Make Impact
-                                </span>
-                            </h1>
-                            <p class="lead text-white-50 mb-4" style="animation: fadeInUp 1.6s ease;">
-                                Full-stack developer passionate about creating elegant solutions to complex problems.
-                                Specializing in web, mobile, and AI-driven applications.
-                            </p>
-                            <div
-                                class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3"
-                                style="animation: fadeInUp 1.8s ease;">
-                                <a class="btn btn-light btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder btn-modern shadow"
-                                    href="resume.html">
-                                    <i class="bi bi-file-earmark-person me-2"></i>View Resume
-                                </a>
-                                <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder btn-modern shadow"
-                                    href="projects.html">
-                                    <i class="bi bi-folder me-2"></i>My Projects
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-7">
-                        <!-- Header profile picture-->
-                        <div class="d-flex justify-content-center mt-5 mt-xxl-0" style="animation: slideInRight 1.5s ease;">
-                            <div class="profile bg-gradient-primary-to-secondary profile-enhanced"
-                                style="box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
-                                <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
-                                <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                                <img class="profile-img" src="assets/Picture.png" alt="Noel Raterta Jr." />
-                                <div class="dots-1">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4"
-                                        xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path
-                                                d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
-                                </div>
-                                <div class="dots-2">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4"
-                                        xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path
-                                                d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
-                                </div>
-                                <div class="dots-3">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4"
-                                        xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path
-                                                d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
-                                </div>
-                                <div class="dots-4">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4"
-                                        xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path
-                                                d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z">
-                                            </path>
-                                            <path
-                                                d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z">
-                                            </path>
-                                            <path
-                                                d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="scroll-indicator">
+                <a href="#about" aria-label="Scroll down">
+                    <i class="bi bi-chevron-down"></i>
+                </a>
             </div>
-        </header>
-        <!-- About Section-->
-        <section class="bg-light py-5">
-            <div class="container px-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-xxl-8">
-                        <div class="text-center my-5">
-                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
-                            <p class="lead fw-light mb-4">Hi, I'm Noel Raterta Jr, and I help businesses grow through
-                                technology.</p>
-                            <p class="text-muted">I’m just your average student, but I’m always working on something
-                                cool. Right now, I’m building an Enrollment System with Laravel and creating a Facebook
-                                UI Clone in Android Studio. I’m also diving into Machine Learning and AI—so yeah, I’m
-                                trying to level up my skills every day. Not a coding expert yet, but I’m definitely
-                                making progress!</p>
-                            <div class="d-flex justify-content-center fs-2 gap-4">
-                                <a class="text-gradient" href="https://www.instagram.com/_spadekun/" target="_blank"><i
-                                        class="bi bi-instagram"></i></a>
-                                <a class="text-gradient" href="https://web.facebook.com/noelzkie01" target="_blank"><i
-                                        class="bi bi-facebook"></i></a>
-                                <a class="text-gradient" href="https://github.com/Spade-kun" target="_blank"><i
-                                        class="bi bi-github"></i></a>
-                            </div>
-                        </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate about building digital solutions</p>
+            </div>
+            <div class="about-content">
+                <!-- Profile Image -->
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="assets/Picture1.png" alt="Noel C. Raterta Jr. - Full Stack Developer" class="profile-image" />
+                        <div class="image-border"></div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- GitHub Stats Section-->
-        <section class="py-5 position-relative" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);">
-            <div class="container px-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-xxl-10">
-                        <div class="text-center my-5 animate-on-scroll">
-                            <h2 class="display-5 fw-bolder section-title"><span class="text-gradient d-inline">
-                                <i class="bi bi-github me-2"></i>GitHub Activity
-                            </span></h2>
-                            <p class="lead fw-light mb-5 mt-4">Check out my contributions and code journey</p>
-                            
-                            <!-- GitHub Stats Cards -->
-                            <div class="stats-container mb-4">
-                                <div class="row gx-4 mb-4">
-                                    <div class="col-md-6 mb-3">
-                                        <div class="modern-card p-3">
-                                            <img src="https://github-readme-stats.vercel.app/api?username=Spade-kun&show_icons=true&theme=radical&hide_border=true" 
-                                                 alt="GitHub Stats" class="img-fluid rounded-4">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <div class="modern-card p-3">
-                                            <img src="https://github-readme-streak-stats.herokuapp.com/?user=Spade-kun&theme=radical&hide_border=true" 
-                                                 alt="GitHub Streak" class="img-fluid rounded-4">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Top Languages -->
-                                <div class="row gx-4 justify-content-center mb-4">
-                                    <div class="col-md-8">
-                                        <div class="modern-card p-3">
-                                            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Spade-kun&layout=compact&theme=radical&hide_border=true" 
-                                                 alt="Top Languages" class="img-fluid rounded-4">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- GitHub Trophy -->
-                                <div class="row gx-4 justify-content-center">
-                                    <div class="col-12">
-                                        <div class="modern-card p-3">
-                                            <img src="https://github-profile-trophy.vercel.app/?username=Spade-kun&theme=radical&no-frame=true&column=4&margin-w=15" 
-                                                 alt="GitHub Trophies" class="img-fluid">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-5">
-                                <a class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder btn-modern shadow" 
-                                   href="https://github.com/Spade-kun" target="_blank">
-                                    <i class="bi bi-github me-2"></i>Visit My GitHub Profile
-                                </a>
-                                <p class="text-muted mt-3 small">
-                                    <i class="bi bi-star-fill text-warning me-1"></i>
-                                    Star my repositories if you find them useful!
-                                </p>
-                            </div>
+                
+                <!-- About Text -->
+                <div class="about-text">
+                    <h3>Hello! I'm Noel, a full-stack developer from the Philippines.</h3>
+                    <p>
+                        I'm a BS Information Technology student at Bukidnon State University with a passion for creating 
+                        scalable web applications and mobile apps. My journey in software development started with curiosity 
+                        and has evolved into building real-world solutions for clients and academic projects.
+                    </p>
+                    <p>
+                        Currently, I'm working on an Enrollment System using Laravel v11 and developing a Facebook UI Clone 
+                        in Android Studio. I'm also exploring Machine Learning and AI to expand my technical expertise.
+                    </p>
+                    <p>
+                        When I'm not coding, I enjoy learning new technologies, contributing to open-source projects, 
+                        and solving complex problems with elegant solutions.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">27+</div>
+                            <div class="stat-label">Repositories</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">241</div>
+                            <div class="stat-label">Contributions</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">2023</div>
+                            <div class="stat-label">Since</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- Footer-->
-    <footer class="bg-white py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto">
-                    <div class="small m-0">Copyright &copy; Noel Raterta Jr. 2025</div>
-                </div>
-                <div class="col-auto">
-                    <a class="small" href="https://github.com/Spade-kun" target="_blank">GitHub</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="https://web.facebook.com/noelzkie01" target="_blank">Facebook</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="contact.html">Contact</a>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+            </div>
+            <div class="skills-grid">
+                <!-- Frontend Skills -->
+                <div class="skill-category">
+                    <div class="skill-category-icon">
+                        <i class="bi bi-palette"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">UI/UX</span>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="skill-category">
+                    <div class="skill-category-icon">
+                        <i class="bi bi-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MVC Architecture</span>
+                        <span class="skill-tag">Microservices</span>
+                    </div>
+                </div>
+                
+                <!-- Database Skills -->
+                <div class="skill-category">
+                    <div class="skill-category-icon">
+                        <i class="bi bi-database"></i>
+                    </div>
+                    <h3>Database & Storage</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Database Design</span>
+                    </div>
+                </div>
+                
+                <!-- Mobile Development -->
+                <div class="skill-category">
+                    <div class="skill-category-icon">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Android Studio</span>
+                        <span class="skill-tag">Mobile UI</span>
+                    </div>
+                </div>
+                
+                <!-- Tools & Other -->
+                <div class="skill-category">
+                    <div class="skill-category-icon">
+                        <i class="bi bi-tools"></i>
+                    </div>
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">SEO</span>
+                    </div>
+                </div>
+                
+                <!-- Other Skills -->
+                <div class="skill-category">
+                    <div class="skill-category-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h3>Additional Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">IT Support</span>
+                        <span class="skill-tag">Networking</span>
+                        <span class="skill-tag">Cybersecurity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Recent work and notable projects from GitHub</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1: Enrollment System -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Spade-kun/Enrollment_System" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Laravel</span>
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">CSS</span>
+                        </div>
+                        <h3 class="project-title">Enrollment System</h3>
+                        <p class="project-description">
+                            A comprehensive enrollment management system built with Laravel v11. Features include student 
+                            registration, course management, and automated enrollment processing.
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-stats">
+                                <span><i class="bi bi-star"></i> 5</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Facebook UI Clone -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Spade-kun/Facebook_UI_Clone" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">Android</span>
+                        </div>
+                        <h3 class="project-title">Facebook UI Clone</h3>
+                        <p class="project-description">
+                            Android application recreating Facebook's user interface using Java in Android Studio. 
+                            Demonstrates mobile UI development skills and Material Design principles.
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-stats">
+                                <span><i class="bi bi-star"></i> 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: API Integration -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Spade-kun/SimpleAPI_INTEGRATION" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">API</span>
+                        </div>
+                        <h3 class="project-title">Simple API Integration</h3>
+                        <p class="project-description">
+                            Demonstrating RESTful API integration using JavaScript. Features data fetching, 
+                            error handling, and dynamic content rendering.
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-stats">
+                                <span><i class="bi bi-star"></i> 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Capstone System -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Spade-kun/Capstone_System" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">ML</span>
+                        </div>
+                        <h3 class="project-title">Capstone System</h3>
+                        <p class="project-description">
+                            Academic capstone project incorporating Python and machine learning concepts. 
+                            Showcases ability to work with AI/ML technologies.
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-stats">
+                                <span><i class="bi bi-star"></i> 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5: Dental Clinic Website -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Spade-kun/DENTAL_CLINIC_WEBSITE" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">Web</span>
+                        </div>
+                        <h3 class="project-title">Dental Clinic Website</h3>
+                        <p class="project-description">
+                            Professional website for a dental clinic with appointment booking system, 
+                            service showcase, and patient management features.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Project 6: Move or Die Game -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Spade-kun/MOVE_OR_DIE_GAME" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">Game</span>
+                        </div>
+                        <h3 class="project-title">Move or Die Game</h3>
+                        <p class="project-description">
+                            Interactive game developed in Java demonstrating object-oriented programming, 
+                            game logic, and user interface design.
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <div class="section-cta">
+                <a href="https://github.com/Spade-kun?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    <i class="bi bi-github"></i>
+                    View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">Professional journey and work history</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - Present</div>
+                        <h3>Freelance Developer</h3>
+                        <p class="timeline-company">Self-Employed</p>
+                        <ul class="timeline-description">
+                            <li>Developing custom web applications using Laravel, PHP, and modern frontend technologies</li>
+                            <li>Building mobile applications with Java and Android Studio</li>
+                            <li>Implementing API integrations and database solutions</li>
+                            <li>Collaborating with clients to deliver tailored software solutions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - Present</div>
+                        <h3>BS Information Technology Student</h3>
+                        <p class="timeline-company">Bukidnon State University</p>
+                        <ul class="timeline-description">
+                            <li>Pursuing Bachelor of Science in Information Technology</li>
+                            <li>Active participation in academic and GitHub projects</li>
+                            <li>Hands-on experience with Laravel, Java, Android, and API development</li>
+                            <li>Consistent Dean's Lister recognition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certifications & Achievements</h2>
+                <p class="section-subtitle">Professional certifications and awards</p>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h3>Cisco Cybersecurity</h3>
+                    <p>Cisco Networking Academy</p>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="bi bi-diagram-3"></i>
+                    </div>
+                    <h3>CCNA Introduction</h3>
+                    <p>Cisco Networking Academy</p>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="bi bi-router"></i>
+                    </div>
+                    <h3>CCNA Switching & Routing</h3>
+                    <p>Cisco Networking Academy</p>
+                </div>
+
+                <div class="certification-card highlight">
+                    <div class="certification-icon">
+                        <i class="bi bi-trophy"></i>
+                    </div>
+                    <h3>Hack4Gov Region X</h3>
+                    <p>1st Runner Up</p>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="bi bi-file-earmark-code"></i>
+                    </div>
+                    <h3>TOPCIT Level 2</h3>
+                    <p>Test of Practical Competency in ICT</p>
+                </div>
+
+                <div class="certification-card highlight">
+                    <div class="certification-icon">
+                        <i class="bi bi-award"></i>
+                    </div>
+                    <h3>Dean's Lister</h3>
+                    <p>Multiple Semesters</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together on your next project</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <div>
+                            <strong>Location</strong>
+                            <p>Malaybalay City, Bukidnon, Philippines</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:noelratertajr@gmail.com">noelratertajr@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-github"></i>
+                        <div>
+                            <strong>GitHub</strong>
+                            <p><a href="https://github.com/Spade-kun" target="_blank" rel="noopener noreferrer">@Spade-kun</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://github.com/Spade-kun" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="mailto:noelratertajr@gmail.com" aria-label="Email">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form with Formspree Integration (Preserved from original) -->
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" action="https://formspree.io/f/mpwoklwj" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+63 XXX XXX XXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required rows="5" placeholder="Tell me about your project..."></textarea>
+                        </div>
+
+                        <!-- Success Message -->
+                        <div id="submitSuccessMessage" class="alert alert-success" style="display: none;">
+                            <i class="bi bi-check-circle"></i>
+                            <strong>Message sent successfully!</strong> Thank you for reaching out. I'll get back to you soon!
+                        </div>
+
+                        <!-- Error Message -->
+                        <div id="submitErrorMessage" class="alert alert-error" style="display: none;">
+                            <i class="bi bi-x-circle"></i>
+                            <strong>Error sending message.</strong> Please try again or contact me directly via email.
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="submitButton">
+                            <i class="bi bi-send"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>&lt;Noel<span class="accent">/</span>&gt;</h3>
+                    <p>Building digital solutions that make an impact.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/Spade-kun" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="mailto:noelratertajr@gmail.com" aria-label="Email">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Noel C. Raterta Jr. All rights reserved.</p>
+                <p>Crafted with <i class="bi bi-heart-fill"></i> using HTML, CSS & JavaScript</p>
+            </div>
+        </div>
     </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
