@@ -578,6 +578,24 @@ img {
     margin-bottom: var(--spacing-md);
 }
 
+/* CV Download Buttons */
+.cv-download {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.cv-download .btn {
+    flex: 1;
+    min-width: 180px;
+    justify-content: center;
+}
+
+.cv-download .btn i {
+    font-size: 1.125rem;
+}
+
 .about-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -1313,6 +1331,14 @@ img {
     .image-wrapper {
         max-width: 280px;
         margin: 0 auto;
+    }
+    
+    .cv-download {
+        flex-direction: column;
+    }
+    
+    .cv-download .btn {
+        width: 100%;
     }
     
     /* Contact */
