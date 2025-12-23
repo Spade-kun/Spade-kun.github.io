@@ -500,6 +500,11 @@ img {
     transform: translateY(-2px);
 }
 
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
 /* ===================================
    About Section
    =================================== */
