@@ -1,0 +1,24 @@
+{
+  "name": "spade-kun.github.io",
+  "version": "1.0.0",
+  "description": "[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://spade-kun.github.io/)\r [![Portfolio](https://img.shields.io/badge/Portfolio-Personal-blue)](https://spade-kun.github.io/)",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spade-kun/Spade-kun.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spade-kun/Spade-kun.github.io/issues"
+  },
+  "homepage": "https://github.com/Spade-kun/Spade-kun.github.io#readme",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "three": "^0.184.0"
+  }
+}
