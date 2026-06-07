@@ -102,14 +102,13 @@
                     <span>Full-Stack Developer</span>
                 </div>
                 <h1 class="hero-title">
-                    Hi, I'm <span class="accent-text">Noel C. Raterta Jr.</span>
+                    Noel C.<span class="hero-family">Raterta Jr.</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Building elegant <span class="typed-text"></span>
+                    Building production-ready <span class="typed-text"></span>
                 </p>
                 <p class="hero-description">
-                    Passionate full-stack developer specializing in Laravel, PHP, Java, and modern web technologies. 
-                    Transforming ideas into scalable digital solutions.
+                    Full-stack developer focused on Laravel, PHP, Java, automation, and polished web experiences for real client workflows.
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">
@@ -134,6 +133,42 @@
                     </a>
                 </div>
             </div>
+            <aside class="hero-showcase" aria-label="Portfolio highlights">
+                <div class="showcase-card showcase-card-main">
+                    <span class="showcase-label">Selected Stack</span>
+                    <div class="showcase-stack">
+                        <span>Laravel</span>
+                        <span>PHP</span>
+                        <span>JavaScript</span>
+                        <span>n8n</span>
+                    </div>
+                </div>
+                <div class="showcase-card showcase-card-lab" aria-label="Interactive development preview">
+                    <div class="lab-window">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="lab-code">
+                        <span><em>const</em> project = "client-ready";</span>
+                        <span><em>build</em>("Laravel", "APIs", "n8n");</span>
+                        <span><em>deploy</em>({ speed: "fast" });</span>
+                    </div>
+                    <div class="lab-orbit" aria-hidden="true">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                    <div class="lab-caption">
+                        <strong>Available for freelance builds</strong>
+                        <span>Web apps, landing pages, APIs, and workflow automation.</span>
+                    </div>
+                </div>
+                <div class="showcase-card showcase-card-metric">
+                    <strong>27+</strong>
+                    <span>Repositories shipped and maintained</span>
+                </div>
+            </aside>
             <div class="scroll-indicator">
                 <a href="#about" aria-label="Scroll down">
                     <i class="bi bi-chevron-down"></i>
@@ -153,7 +188,7 @@
                 <!-- Profile Image -->
                 <div class="about-image">
                     <div class="image-wrapper">
-                        <img src="assets/Picture1.png" alt="Noel C. Raterta Jr. - Full Stack Developer" class="profile-image" />
+                        <img src="assets/Picture1.png" alt="Noel C. Raterta Jr. - Full Stack Developer" class="profile-image" width="350" height="350" loading="lazy" decoding="async" />
                         <div class="image-border"></div>
                     </div>
                 </div>
@@ -162,17 +197,18 @@
                 <div class="about-text">
                     <h3>Hello! I'm Noel, a full-stack developer from the Philippines.</h3>
                     <p>
-                        I'm a BS Information Technology student at Bukidnon State University with a passion for creating 
-                        scalable web applications and mobile apps. My journey in software development started with curiosity 
-                        and has evolved into building real-world solutions for clients and academic projects.
+                        I build practical digital products that feel clean, fast, and reliable. My work combines full-stack
+                        development, responsive interface design, database planning, and workflow automation for websites,
+                        internal tools, and client-facing systems.
                     </p>
                     <p>
-                        Currently, I'm working on an Enrollment System using Laravel v11 and developing a Facebook UI Clone 
-                        in Android Studio. I'm also exploring Machine Learning and AI to expand my technical expertise.
+                        My current focus is Laravel-based web applications, API integrations, Android UI development, and
+                        automation with tools like n8n and webhooks. I like turning messy requirements into organized
+                        systems that are easy to use and maintain.
                     </p>
                     <p>
-                        When I'm not coding, I enjoy learning new technologies, contributing to open-source projects, 
-                        and solving complex problems with elegant solutions.
+                        I am continuously sharpening my craft through academic projects, freelance work, and experiments
+                        with AI, machine learning, and modern frontend interaction design.
                     </p>
                     
                     <!-- CV Download Button -->
@@ -379,6 +415,7 @@
                 <!-- Live Project 1: Everly Plumbing -->
                 <article class="project-card">
                     <div class="project-image">
+                        <img src="assets/everly-plumbing-preview.png" alt="Everly Plumbing website homepage screenshot" loading="lazy" decoding="async" width="1440" height="900" />
                         <div class="project-overlay">
                             <a href="http://everlyplumbing.com/" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="bi bi-box-arrow-up-right"></i>
@@ -408,6 +445,7 @@
                 <!-- Live Project 2: Salt Lyf Cruises -->
                 <article class="project-card">
                     <div class="project-image">
+                        <img src="assets/salt-lyf-cruises-preview.png" alt="Salt Lyf Cruises website homepage screenshot" loading="lazy" decoding="async" width="1440" height="900" />
                         <div class="project-overlay">
                             <a href="https://www.saltlyfcruises.com/" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="bi bi-box-arrow-up-right"></i>
@@ -437,6 +475,7 @@
                 <!-- Live Project 3: Everly Bookkeeping -->
                 <article class="project-card">
                     <div class="project-image">
+                        <img src="assets/everly-bookkeeping-preview.png" alt="Everly Bookkeeping website homepage screenshot" loading="lazy" decoding="async" width="1440" height="900" />
                         <div class="project-overlay">
                             <a href="https://www.everlybookkeeping.com/" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="bi bi-box-arrow-up-right"></i>
@@ -952,8 +991,8 @@
     </button>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    <script src="js/interactions.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/interactions.js" defer></script>
 </body>
 
 </html>

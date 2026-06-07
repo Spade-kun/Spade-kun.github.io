@@ -65,7 +65,7 @@ class CardTilt {
         const r = card.getBoundingClientRect();
         const rx = ((e.clientY - r.top - r.height / 2) / (r.height / 2)) * maxDeg;
         const ry = -((e.clientX - r.left - r.width / 2) / (r.width / 2)) * maxDeg;
-        card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.03) translateY(-4px)`;
+        card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.015) translateY(-2px)`;
         card.style.boxShadow = '0 30px 70px rgba(0,0,0,0.45), 0 0 60px rgba(99,102,241,0.18)';
       });
       card.addEventListener('mouseleave', () => {
@@ -174,7 +174,15 @@ class ScrollProgress {
     this.bar = Object.assign(document.createElement('div'), { className: 'scroll-progress-bar' });
     document.body.appendChild(this.bar);
     this.ring = this.createRing();
-    window.addEventListener('scroll', () => this.update(), { passive: true });
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        this.update();
+        ticking = false;
+      });
+    }, { passive: true });
     this.update();
   }
   createRing() {
@@ -222,8 +230,16 @@ class NavSlider {
       l.addEventListener('mouseenter', () => this.moveTo(l));
       l.addEventListener('mouseleave', () => this.moveToActive());
     });
-    window.addEventListener('scroll', () => this.moveToActive(), { passive: true });
-    window.addEventListener('resize', () => this.moveToActive());
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        this.moveToActive();
+        ticking = false;
+      });
+    }, { passive: true });
+    window.addEventListener('resize', () => this.moveToActive(), { passive: true });
   }
   getActive() { return document.querySelector('.nav-link.active') || this.links[0]; }
   moveTo(link) {
@@ -273,6 +289,8 @@ class StaggerReveal {
 // ─── 10. HERO CANVAS PARTICLES ──────────────────────────────────
 class HeroParticles {
   constructor() {
+    if (window.matchMedia('(max-width: 768px)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const hero = document.querySelector('.hero');
     if (!hero) return;
 
@@ -283,26 +301,37 @@ class HeroParticles {
     this.ctx = this.canvas.getContext('2d');
     this.mouse = { x: -1000, y: -1000 };
     this.particles = [];
+    this.running = true;
 
     this.resize();
     this.spawn();
-    window.addEventListener('resize', () => { this.resize(); this.spawn(); });
+    window.addEventListener('resize', () => { this.resize(); this.spawn(); }, { passive: true });
     window.addEventListener('mousemove', e => {
       const rect = hero.getBoundingClientRect();
       this.mouse.x = e.clientX - rect.left;
       this.mouse.y = e.clientY - rect.top;
+    }, { passive: true });
+    document.addEventListener('visibilitychange', () => {
+      this.running = document.visibilityState === 'visible';
+      if (this.running) this.loop();
     });
     this.loop();
   }
 
   resize() {
     const hero = this.canvas.parentElement.parentElement;
-    this.W = this.canvas.width = hero.offsetWidth;
-    this.H = this.canvas.height = hero.offsetHeight;
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    this.W = hero.offsetWidth;
+    this.H = hero.offsetHeight;
+    this.canvas.width = Math.floor(this.W * dpr);
+    this.canvas.height = Math.floor(this.H * dpr);
+    this.canvas.style.width = `${this.W}px`;
+    this.canvas.style.height = `${this.H}px`;
+    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
   spawn() {
-    const count = Math.min(Math.floor((this.W * this.H) / 9000), 90);
+    const count = Math.min(Math.floor((this.W * this.H) / 16000), 42);
     this.particles = Array.from({ length: count }, () => ({
       x: Math.random() * this.W,
       y: Math.random() * this.H,
@@ -315,6 +344,7 @@ class HeroParticles {
   }
 
   loop() {
+    if (!this.running) return;
     const { ctx, W, H } = this;
     ctx.clearRect(0, 0, W, H);
 
@@ -325,8 +355,9 @@ class HeroParticles {
       const dx = p.x - this.mouse.x, dy = p.y - this.mouse.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
       if (dist < 110) {
-        p.vx += (dx / dist) * 0.18;
-        p.vy += (dy / dist) * 0.18;
+        const safeDist = Math.max(dist, 1);
+        p.vx += (dx / safeDist) * 0.12;
+        p.vy += (dy / safeDist) * 0.12;
       }
 
       p.vx *= 0.993; p.vy *= 0.993;
@@ -454,9 +485,9 @@ class ProfileTilt {
     section.addEventListener('mousemove', e => {
       const r = wrap.getBoundingClientRect();
       const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-      const dx = (e.clientX - cx) / (r.width / 2) * 12;
-      const dy = -(e.clientY - cy) / (r.height / 2) * 12;
-      wrap.style.transform = `perspective(600px) rotateY(${dx}deg) rotateX(${dy}deg) scale(1.04)`;
+      const dx = (e.clientX - cx) / (r.width / 2) * 3;
+      const dy = -(e.clientY - cy) / (r.height / 2) * 3;
+      wrap.style.transform = `perspective(800px) rotateY(${dx}deg) rotateX(${dy}deg) scale(1.01)`;
     });
 
     section.addEventListener('mouseleave', () => {
@@ -537,12 +568,12 @@ class ProjectHoverPreview {
 
 // ─── INIT ────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  new MagneticCursor();
+  // Keep the premium interactions, but avoid the heaviest cursor layer for better responsiveness.
   new HeroParticles();
   new SectionBackgrounds();
-  new CardTilt('.project-card', 10);
-  new CardTilt('.skill-category', 8);
-  new CardTilt('.certification-card', 7);
+  new CardTilt('.project-card', 4);
+  new CardTilt('.skill-category', 3);
+  new CardTilt('.certification-card', 3);
   new SkillNeighborDim();
   new HeroGlitch();
   new ScrollProgress();

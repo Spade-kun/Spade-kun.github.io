@@ -84,31 +84,31 @@
 /* ── SCROLL PROGRESS BAR ─────────────────────────────────────── */
 .scroll-progress-bar {
   position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 9999;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6, #f59e0b);
+  background: linear-gradient(90deg, #6ee7b7, #38bdf8, #f97316);
   transform-origin: left; transform: scaleX(0);
   pointer-events: none;
-  box-shadow: 0 0 10px rgba(99,102,241,.6);
+  box-shadow: 0 0 10px rgba(56,189,248,.45);
   transition: transform .12s ease;
 }
 
 /* ── SCROLL PROGRESS RING ────────────────────────────────────── */
 .scroll-progress-ring-wrap {
-  position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9990;
+  position: fixed; bottom: 5.25rem; right: 1.5rem; z-index: 9990;
   width: 54px; height: 54px; display: flex; align-items: center; justify-content: center;
   pointer-events: none; opacity: 0; transform: translateX(12px);
   animation: ring-fadein .7s ease 1.5s forwards;
 }
 @keyframes ring-fadein { to { opacity: 1; transform: translateX(0); } }
-.scroll-progress-ring-svg { width: 54px; height: 54px; position: absolute; filter: drop-shadow(0 0 6px rgba(99,102,241,.5)); }
-.scroll-progress-pct { position: absolute; font-size: .6rem; font-weight: 800; color: #818cf8; letter-spacing: .04em; }
+.scroll-progress-ring-svg { width: 54px; height: 54px; position: absolute; filter: drop-shadow(0 0 6px rgba(56,189,248,.35)); }
+.scroll-progress-pct { position: absolute; font-size: .6rem; font-weight: 800; color: #a7f3d0; letter-spacing: .04em; }
 
 /* ── NAV SLIDER ──────────────────────────────────────────────── */
 .nav-slider-indicator {
   position: absolute; bottom: 0; height: 2px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  background: linear-gradient(90deg, #6ee7b7, #38bdf8);
   border-radius: 999px; pointer-events: none; opacity: 0;
   transition: left .35s cubic-bezier(0.22,1,0.36,1), width .35s cubic-bezier(0.22,1,0.36,1), opacity .2s;
-  box-shadow: 0 0 12px rgba(99,102,241,.5);
+  box-shadow: 0 0 12px rgba(56,189,248,.35);
 }
 
 /* ── STAGGER REVEAL ──────────────────────────────────────────── */
@@ -142,6 +142,15 @@
 /* ── SECTION BACKGROUNDS ─────────────────────────────────────── */
 .section-bg {
   position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+}
+
+.section {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
+.hero {
+  content-visibility: visible;
 }
 
 /* Ensure section content stays above background */
@@ -343,6 +352,10 @@
 }
 @media (max-width: 768px) {
   .bg-code-token { display: none; }
-  .bg-orb { filter: blur(60px); }
+  .bg-orb { display: none; }
   .scroll-progress-ring-wrap { display: none; }
+  .section-bg::before,
+  .section-bg::after,
+  .bg-dot-grid,
+  .bg-wave { display: none; }
 }
