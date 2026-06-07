@@ -116,6 +116,7 @@ class HeroGlitch {
 //  SINGLE unit — not split char-by-char — so gradient CSS is intact.
 class SplitTextReveal {
   constructor(selector, delay = 0.1, stagger = 0.04) {
+    if (window.matchMedia('(max-width: 768px)').matches) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     document.querySelectorAll(selector).forEach(el => this.split(el, delay, stagger));
   }

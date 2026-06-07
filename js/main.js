@@ -4,6 +4,10 @@
  * Features: Smooth scrolling, animations, typing effect, form handling
  */
 
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 // ==========================================
 // Utility Functions
 // ==========================================
@@ -57,6 +61,7 @@ class Navigation {
         
         // Mobile menu toggle
         if (this.navToggle) {
+            this.navToggle.setAttribute('aria-expanded', 'false');
             this.navToggle.addEventListener('click', () => this.toggleMenu());
         }
         
@@ -75,6 +80,12 @@ class Navigation {
         
         // Set active link on scroll
         window.addEventListener('scroll', debounce(() => this.updateActiveLink(), 100));
+
+        window.addEventListener('resize', debounce(() => {
+            if (window.innerWidth > 768) {
+                this.closeMenu();
+            }
+        }, 100));
     }
     
     handleScroll() {
@@ -86,13 +97,19 @@ class Navigation {
     }
     
     toggleMenu() {
-        this.navMenu.classList.toggle('active');
-        this.navToggle.classList.toggle('active');
+        const isOpen = this.navMenu.classList.toggle('active');
+        this.navToggle.classList.toggle('active', isOpen);
+        document.body.classList.toggle('nav-open', isOpen);
+        this.navToggle.setAttribute('aria-expanded', String(isOpen));
     }
     
     closeMenu() {
         this.navMenu.classList.remove('active');
         this.navToggle.classList.remove('active');
+        document.body.classList.remove('nav-open');
+        if (this.navToggle) {
+            this.navToggle.setAttribute('aria-expanded', 'false');
+        }
     }
     
     setupSmoothScroll() {

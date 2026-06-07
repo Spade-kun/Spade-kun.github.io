@@ -351,6 +351,15 @@
   .mc-dot, .mc-ring, .scroll-progress-ring-wrap, .project-floating-preview { display: none !important; }
 }
 @media (max-width: 768px) {
+  .section {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
+
+  .scroll-progress-bar {
+    display: none;
+  }
+
   .bg-code-token { display: none; }
   .bg-orb { display: none; }
   .scroll-progress-ring-wrap { display: none; }
