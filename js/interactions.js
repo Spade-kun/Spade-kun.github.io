@@ -187,7 +187,11 @@ class ScrollProgress {
     this.update();
   }
   createRing() {
-    const wrap = Object.assign(document.createElement('div'), { className: 'scroll-progress-ring-wrap' });
+    const wrap = Object.assign(document.createElement('button'), {
+      className: 'scroll-progress-ring-wrap',
+      type: 'button'
+    });
+    wrap.setAttribute('aria-label', 'Scroll to top');
     const C = 2 * Math.PI * 40;
     wrap.innerHTML = `
       <svg viewBox="0 0 100 100" class="scroll-progress-ring-svg" aria-hidden="true">
@@ -201,9 +205,13 @@ class ScrollProgress {
           stroke-dasharray="${C}" stroke-dashoffset="${C}"
           transform="rotate(-90 50 50)"/>
       </svg>
+      <span class="scroll-progress-arrow" aria-hidden="true"><i class="bi bi-arrow-up-short"></i></span>
       <span class="scroll-progress-pct">0</span>`;
     this.arc = wrap.querySelector('.sp-arc');
     this.pct = wrap.querySelector('.scroll-progress-pct');
+    wrap.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     document.body.appendChild(wrap);
     return wrap;
   }
@@ -213,6 +221,7 @@ class ScrollProgress {
     this.bar.style.transform = `scaleX(${r})`;
     this.arc.setAttribute('stroke-dashoffset', 2 * Math.PI * 40 * (1 - r));
     this.pct.textContent = Math.round(r * 100);
+    this.ring.classList.toggle('scroll-progress-ring-wrap--visible', window.scrollY > 300);
   }
 }
 
@@ -567,6 +576,77 @@ class ProjectHoverPreview {
   }
 }
 
+// ─── 11. CERTIFICATIONS CAROUSEL ────────────────────────────────
+class CertificationsCarousel {
+  constructor() {
+    this.root = document.querySelector('.certifications-carousel');
+    this.track = document.getElementById('certificationsTrack');
+    this.prevButton = this.root?.querySelector('.carousel-arrow-prev');
+    this.nextButton = this.root?.querySelector('.carousel-arrow-next');
+    if (!this.root || !this.track || !this.prevButton || !this.nextButton) return;
+
+    this.step = () => {
+      const firstCard = this.track.querySelector('.certification-card');
+      if (!firstCard) return this.track.clientWidth * 0.8;
+      const styles = window.getComputedStyle(this.track);
+      const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+      return firstCard.getBoundingClientRect().width + gap;
+    };
+
+    this.prevButton.addEventListener('click', () => this.scrollBy(-1));
+    this.nextButton.addEventListener('click', () => this.scrollBy(1));
+    this.track.addEventListener('scroll', () => this.updateButtons(), { passive: true });
+    window.addEventListener('resize', () => this.updateButtons(), { passive: true });
+    this.updateButtons();
+  }
+
+  scrollBy(direction) {
+    this.track.scrollBy({ left: this.step() * direction, behavior: 'smooth' });
+  }
+
+  updateButtons() {
+    const maxScroll = this.track.scrollWidth - this.track.clientWidth - 1;
+    const current = this.track.scrollLeft;
+    this.prevButton.disabled = current <= 0;
+    this.nextButton.disabled = current >= maxScroll;
+  }
+}
+
+// ─── 12. SKILLS CAROUSEL ────────────────────────────────────────
+class SkillsCarousel {
+  constructor() {
+    this.track = document.getElementById('skillsTrack');
+    this.prevButton = document.querySelector('.skills-carousel .carousel-arrow-prev');
+    this.nextButton = document.querySelector('.skills-carousel .carousel-arrow-next');
+    if (!this.track || !this.prevButton || !this.nextButton) return;
+
+    this.step = () => {
+      const firstCard = this.track.querySelector('.skill-category');
+      if (!firstCard) return this.track.clientWidth * 0.8;
+      const styles = window.getComputedStyle(this.track);
+      const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+      return firstCard.getBoundingClientRect().width + gap;
+    };
+
+    this.prevButton.addEventListener('click', () => this.scrollBy(-1));
+    this.nextButton.addEventListener('click', () => this.scrollBy(1));
+    this.track.addEventListener('scroll', () => this.updateButtons(), { passive: true });
+    window.addEventListener('resize', () => this.updateButtons(), { passive: true });
+    this.updateButtons();
+  }
+
+  scrollBy(direction) {
+    this.track.scrollBy({ left: this.step() * direction, behavior: 'smooth' });
+  }
+
+  updateButtons() {
+    const maxScroll = this.track.scrollWidth - this.track.clientWidth - 1;
+    const current = this.track.scrollLeft;
+    this.prevButton.disabled = current <= 0;
+    this.nextButton.disabled = current >= maxScroll;
+  }
+}
+
 // ─── INIT ────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   // Keep the premium interactions, but avoid the heaviest cursor layer for better responsiveness.
@@ -584,6 +664,8 @@ document.addEventListener('DOMContentLoaded', () => {
   new ProfileTilt();
   new StatCountUp();
   new ProjectHoverPreview();
+  new CertificationsCarousel();
+  new SkillsCarousel();
 
   // Split text reveal — FIXED (runs after fonts load)
   setTimeout(() => new SplitTextReveal('.hero-title', 0.2, 0.04), 300);

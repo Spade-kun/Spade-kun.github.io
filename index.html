@@ -182,7 +182,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Passionate about building digital solutions</p>
+                <p class="section-subtitle">Full-stack developer focused on building useful, client-ready systems</p>
             </div>
             <div class="about-content">
                 <!-- Profile Image -->
@@ -195,20 +195,27 @@
                 
                 <!-- About Text -->
                 <div class="about-text">
-                    <h3>Hello! I'm Noel, a full-stack developer from the Philippines.</h3>
+                    <h3>I build practical web systems that feel clean, fast, and reliable.</h3>
+                    <div class="about-highlights" aria-label="Core focus areas">
+                        <span class="about-highlight">Full-Stack Web Apps</span>
+                        <span class="about-highlight">Laravel &amp; PHP</span>
+                        <span class="about-highlight">Next.js &amp; React</span>
+                        <span class="about-highlight">Automation &amp; APIs</span>
+                        <span class="about-highlight">Deployment &amp; DevOps</span>
+                    </div>
                     <p>
-                        I build practical digital products that feel clean, fast, and reliable. My work combines full-stack
-                        development, responsive interface design, database planning, and workflow automation for websites,
-                        internal tools, and client-facing systems.
+                        I’m Noel, a full-stack developer from the Philippines who focuses on client-ready websites,
+                        internal tools, and business systems. My work combines responsive frontend design, backend logic,
+                        database planning, and automation to keep projects practical and maintainable.
                     </p>
                     <p>
-                        My current focus is Laravel-based web applications, API integrations, Android UI development, and
-                        automation with tools like n8n and webhooks. I like turning messy requirements into organized
-                        systems that are easy to use and maintain.
+                        My current focus is Laravel, Next.js, API integrations, CRM workflows, and deployment tasks such
+                        as Railway, DigitalOcean, DNS, reverse proxy setup, and Docker. I like turning messy requirements
+                        into organized systems that are easy to use and maintain.
                     </p>
                     <p>
-                        I am continuously sharpening my craft through academic projects, freelance work, and experiments
-                        with AI, machine learning, and modern frontend interaction design.
+                        I keep sharpening my craft through freelance work, academic projects, and hands-on experience
+                        with automation, networking basics, and modern frontend interaction design.
                     </p>
                     
                     <!-- CV Download Button -->
@@ -249,153 +256,174 @@
                 <h2 class="section-title">Technical Skills</h2>
                 <p class="section-subtitle">Technologies, tools, and platforms I work with</p>
             </div>
-            <div class="skills-grid">
-                <!-- Frontend Skills -->
-                <div class="skill-category">
-                    <div class="skill-category-icon">
-                        <i class="bi bi-palette"></i>
+            <div class="skills-carousel" aria-label="Technical skills carousel">
+                <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous skill category">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+                <div class="skills-track" id="skillsTrack" tabindex="0">
+                    <!-- Frontend Skills -->
+                    <div class="skill-category">
+                        <div class="skill-category-icon">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <h3>Frontend Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Angular</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">UI/UX</span>
+                        </div>
                     </div>
-                    <h3>Frontend Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Responsive Design</span>
-                        <span class="skill-tag">UI/UX</span>
+                    
+                    <!-- Backend Skills -->
+                    <div class="skill-category">
+                        <div class="skill-category-icon">
+                            <i class="bi bi-server"></i>
+                        </div>
+                        <h3>Backend Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">NestJS</span>
+                            <span class="skill-tag">MVC Architecture</span>
+                            <span class="skill-tag">ORM</span>
+                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">REST API</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Backend Skills -->
-                <div class="skill-category">
-                    <div class="skill-category-icon">
-                        <i class="bi bi-server"></i>
+                    
+                    <!-- Database Skills -->
+                    <div class="skill-category">
+                        <div class="skill-category-icon">
+                            <i class="bi bi-database"></i>
+                        </div>
+                        <h3>Database &amp; Storage</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Supabase</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Database Design</span>
+                        </div>
                     </div>
-                    <h3>Backend Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">Laravel</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">MVC Architecture</span>
-                        <span class="skill-tag">Microservices</span>
-                        <span class="skill-tag">REST API</span>
+                    
+                    <!-- Mobile Development -->
+                    <div class="skill-category">
+                        <div class="skill-category-icon">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <h3>Mobile Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Android Studio</span>
+                            <span class="skill-tag">Mobile UI</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Database Skills -->
-                <div class="skill-category">
-                    <div class="skill-category-icon">
-                        <i class="bi bi-database"></i>
-                    </div>
-                    <h3>Database &amp; Storage</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Database Design</span>
-                    </div>
-                </div>
-                
-                <!-- Mobile Development -->
-                <div class="skill-category">
-                    <div class="skill-category-icon">
-                        <i class="bi bi-phone"></i>
-                    </div>
-                    <h3>Mobile Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Android Studio</span>
-                        <span class="skill-tag">Mobile UI</span>
-                    </div>
-                </div>
 
-                <!-- Automation & Workflows -->
-                <div class="skill-category">
-                    <div class="skill-category-icon">
-                        <i class="bi bi-diagram-3"></i>
+                    <!-- Automation & Workflows -->
+                    <div class="skill-category">
+                        <div class="skill-category-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h3>Automation &amp; Workflows</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">n8n</span>
+                            <span class="skill-tag">Workflow Automation</span>
+                            <span class="skill-tag">API Integration</span>
+                            <span class="skill-tag">Webhooks</span>
+                            <span class="skill-tag">Process Automation</span>
+                        </div>
                     </div>
-                    <h3>Automation &amp; Workflows</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">n8n</span>
-                        <span class="skill-tag">Workflow Automation</span>
-                        <span class="skill-tag">API Integration</span>
-                        <span class="skill-tag">Webhooks</span>
-                        <span class="skill-tag">Process Automation</span>
-                    </div>
-                </div>
 
-                <!-- SEO & Analytics -->
-                <div class="skill-category">
-                    <div class="skill-category-icon">
-                        <i class="bi bi-graph-up-arrow"></i>
+                    <!-- SEO & Analytics -->
+                    <div class="skill-category">
+                        <div class="skill-category-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h3>SEO &amp; Analytics</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">SEO Optimization</span>
+                            <span class="skill-tag">Meta Data</span>
+                            <span class="skill-tag">Google Search Console</span>
+                            <span class="skill-tag">PageSpeed Insights</span>
+                            <span class="skill-tag">Google Analytics 4</span>
+                            <span class="skill-tag">Google Admin</span>
+                            <span class="skill-tag">Real-Time Analytics</span>
+                        </div>
                     </div>
-                    <h3>SEO &amp; Analytics</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SEO Optimization</span>
-                        <span class="skill-tag">Meta Data</span>
-                        <span class="skill-tag">Google Search Console</span>
-                        <span class="skill-tag">PageSpeed Insights</span>
-                        <span class="skill-tag">Google Analytics 4</span>
-                        <span class="skill-tag">Google Admin</span>
-                        <span class="skill-tag">Real-Time Analytics</span>
-                    </div>
-                </div>
 
-                <!-- CRM & Business Tools -->
-                <div class="skill-category">
-                    <div class="skill-category-icon">
-                        <i class="bi bi-people"></i>
+                    <!-- CRM & Business Tools -->
+                    <div class="skill-category">
+                        <div class="skill-category-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3>CRM &amp; Business Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Zoho CRM</span>
+                            <span class="skill-tag">Lead Management</span>
+                            <span class="skill-tag">Client Pipelines</span>
+                            <span class="skill-tag">Email Campaigns</span>
+                        </div>
                     </div>
-                    <h3>CRM &amp; Business Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Zoho CRM</span>
-                        <span class="skill-tag">Lead Management</span>
-                        <span class="skill-tag">Client Pipelines</span>
-                        <span class="skill-tag">Email Campaigns</span>
-                    </div>
-                </div>
 
-                <!-- Web Platforms -->
-                <div class="skill-category">
-                    <div class="skill-category-icon">
-                        <i class="bi bi-window-stack"></i>
+                    <!-- Web Platforms -->
+                    <div class="skill-category">
+                        <div class="skill-category-icon">
+                            <i class="bi bi-window-stack"></i>
+                        </div>
+                        <h3>Web Platforms</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">WordPress</span>
+                            <span class="skill-tag">Squarespace</span>
+                            <span class="skill-tag">Custom Code Injection</span>
+                            <span class="skill-tag">Landing Pages</span>
+                            <span class="skill-tag skill-tag--learning">Shopify <em>Learning</em></span>
+                            <span class="skill-tag skill-tag--learning">Webflow <em>Learning</em></span>
+                        </div>
                     </div>
-                    <h3>Web Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">WordPress</span>
-                        <span class="skill-tag">Squarespace</span>
-                        <span class="skill-tag">Custom Code Injection</span>
-                        <span class="skill-tag">Landing Pages</span>
-                        <span class="skill-tag skill-tag--learning">Shopify <em>Learning</em></span>
-                        <span class="skill-tag skill-tag--learning">Webflow <em>Learning</em></span>
-                    </div>
-                </div>
 
-                <!-- Tools & DevOps -->
-                <div class="skill-category">
-                    <div class="skill-category-icon">
-                        <i class="bi bi-tools"></i>
+                    <!-- Tools & DevOps -->
+                    <div class="skill-category">
+                        <div class="skill-category-icon">
+                            <i class="bi bi-tools"></i>
+                        </div>
+                        <h3>Tools &amp; DevOps</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Railway Deployment</span>
+                            <span class="skill-tag">DigitalOcean Server Management</span>
+                            <span class="skill-tag">Domain Hosting</span>
+                            <span class="skill-tag">DNS Configuration</span>
+                            <span class="skill-tag">Reverse Proxy</span>
+                            <span class="skill-tag">Docker</span>
+                        </div>
                     </div>
-                    <h3>Tools &amp; DevOps</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Postman</span>
+                    
+                    <!-- Additional Skills -->
+                    <div class="skill-category">
+                        <div class="skill-category-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3>Additional Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">IT Support</span>
+                            <span class="skill-tag">Networking</span>
+                            <span class="skill-tag">Cybersecurity</span>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Additional Skills -->
-                <div class="skill-category">
-                    <div class="skill-category-icon">
-                        <i class="bi bi-shield-check"></i>
-                    </div>
-                    <h3>Additional Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">IT Support</span>
-                        <span class="skill-tag">Networking</span>
-                        <span class="skill-tag">Cybersecurity</span>
-                    </div>
-                </div>
+                <button class="carousel-arrow carousel-arrow-next" type="button" aria-label="Next skill category">
+                    <i class="bi bi-arrow-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -428,6 +456,10 @@
                             <span class="project-tag">Business</span>
                             <span class="project-tag">Services</span>
                         </div>
+                        <div class="project-tech">
+                            <span class="project-tech-label">Built with</span>
+                            <p>WordPress migration to custom Laravel Blade, server deployment, SEO setup, and appointment API integration.</p>
+                        </div>
                         <h3 class="project-title">Everly Plumbing</h3>
                         <p class="project-description">
                             Professional plumbing services website featuring service details, contact options, 
@@ -458,6 +490,10 @@
                             <span class="project-tag">Travel</span>
                             <span class="project-tag">Booking</span>
                         </div>
+                        <div class="project-tech">
+                            <span class="project-tech-label">Built with</span>
+                            <p>Squarespace rebuild with custom layout adjustments, brand-color refinement, and booking flow improvements.</p>
+                        </div>
                         <h3 class="project-title">Salt Lyf Cruises</h3>
                         <p class="project-description">
                             Cruise and tour website designed to present destinations, trip details, and 
@@ -487,6 +523,10 @@
                             <span class="project-tag">Production</span>
                             <span class="project-tag">Finance</span>
                             <span class="project-tag">Bookkeeping</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="project-tech-label">Built with</span>
+                            <p>Custom Laravel build from scratch with realtime messaging-style features and client workflow logic.</p>
                         </div>
                         <h3 class="project-title">Everly Bookkeeping</h3>
                         <p class="project-description">
@@ -521,6 +561,10 @@
                             <span class="project-tag">Static Website</span>
                             <span class="project-tag">Demo</span>
                         </div>
+                        <div class="project-tech">
+                            <span class="project-tech-label">Built with</span>
+                            <p>Basic HTML and CSS highlight page used to showcase the website visually.</p>
+                        </div>
                         <h3 class="project-title">TrailMatrix</h3>
                         <p class="project-description">
                             A comprehensive trail management and tracking application with interactive maps, 
@@ -548,6 +592,10 @@
                         <div class="project-tags">
                             <span class="project-tag">Static Website</span>
                             <span class="project-tag">Demo</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="project-tech-label">Built with</span>
+                            <p>Basic HTML and CSS highlight page used to showcase the website visually.</p>
                         </div>
                         <h3 class="project-title">Lantapan Multiride</h3>
                         <p class="project-description">
@@ -616,6 +664,10 @@
                             <span class="project-tag">PHP</span>
                             <span class="project-tag">CSS</span>
                         </div>
+                        <div class="project-tech">
+                            <span class="project-tech-label">Built with</span>
+                            <p>Laravel v11, PHP, and CSS for an enrollment workflow with registration and course management.</p>
+                        </div>
                         <h3 class="project-title">Enrollment System</h3>
                         <p class="project-description">
                             A comprehensive enrollment management system built with Laravel v11. Features include student 
@@ -642,6 +694,10 @@
                         <div class="project-tags">
                             <span class="project-tag">Java</span>
                             <span class="project-tag">Android</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="project-tech-label">Built with</span>
+                            <p>Java, Android Studio, and Material Design to recreate the Facebook mobile UI.</p>
                         </div>
                         <h3 class="project-title">Facebook UI Clone</h3>
                         <p class="project-description">
@@ -670,6 +726,10 @@
                             <span class="project-tag">JavaScript</span>
                             <span class="project-tag">API</span>
                         </div>
+                        <div class="project-tech">
+                            <span class="project-tech-label">Built with</span>
+                            <p>JavaScript fetch logic, REST API handling, and dynamic rendering for API integration.</p>
+                        </div>
                         <h3 class="project-title">Simple API Integration</h3>
                         <p class="project-description">
                             Demonstrating RESTful API integration using JavaScript. Features data fetching, 
@@ -697,6 +757,10 @@
                             <span class="project-tag">Python</span>
                             <span class="project-tag">ML</span>
                         </div>
+                        <div class="project-tech">
+                            <span class="project-tech-label">Built with</span>
+                            <p>Python and machine learning concepts for an academic capstone system.</p>
+                        </div>
                         <h3 class="project-title">Capstone System</h3>
                         <p class="project-description">
                             Academic capstone project incorporating Python and machine learning concepts. 
@@ -723,6 +787,10 @@
                         <div class="project-tags">
                             <span class="project-tag">PHP</span>
                             <span class="project-tag">Web</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="project-tech-label">Built with</span>
+                            <p>PHP, HTML, and CSS with appointment booking and clinic workflow features.</p>
                         </div>
                         <h3 class="project-title">Dental Clinic Website</h3>
                         <p class="project-description">
@@ -774,14 +842,14 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2023 - Present</div>
-                        <h3>Freelance Developer</h3>
-                        <p class="timeline-company">Self-Employed</p>
+                        <div class="timeline-date">February 2026 - May 2026</div>
+                        <h3>Intern - Technical Support and Web Development</h3>
+                        <p class="timeline-company">Provincial ICT Division (PICTD) Bukidnon</p>
                         <ul class="timeline-description">
-                            <li>Developing custom web applications using Laravel, PHP, and modern frontend technologies</li>
-                            <li>Building mobile applications with Java and Android Studio</li>
-                            <li>Implementing API integrations and database solutions</li>
-                            <li>Collaborating with clients to deliver tailored software solutions</li>
+                            <li>Assisted in full-stack development using Angular, NestJS, ORM, and MySQL for inventory and HRMIS-related systems</li>
+                            <li>Supported DNS setup, reverse proxy configuration, IP reassignment, VLAN basics, UTP crimping, LAN repair, switch troubleshooting, and speed testing</li>
+                            <li>Handled IT support tasks including printer sharing fixes, eTRACS installation, device configuration, software troubleshooting, ICT inventory encoding, and workstation maintenance</li>
+                            <li>Prepared CCTV, cabinet, and command center layout documentation for infrastructure planning and office monitoring support</li>
                         </ul>
                     </div>
                 </div>
@@ -789,13 +857,43 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2022 - Present</div>
+                        <div class="timeline-date">January 2024 - Present</div>
+                        <h3>Automation, CRM, Analytics, and Website Tools Practice</h3>
+                        <p class="timeline-company">Independent Practice</p>
+                        <ul class="timeline-description">
+                            <li>Automated business processes using n8n workflows to improve lead management and task routing efficiency</li>
+                            <li>Leveraged Zoho CRM and Google Analytics to review user engagement and conversion metrics</li>
+                            <li>Managed client web presence through Squarespace with layout optimization for brand alignment and SEO performance</li>
+                            <li>Built practical workflow and reporting habits across CRM, analytics, and website maintenance tasks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2023 - Present</div>
+                        <h3>Freelance Developer</h3>
+                        <p class="timeline-company">Self-Employed</p>
+                        <ul class="timeline-description">
+                            <li>Developed custom web applications for clients using Next.js, Laravel, PHP, and Supabase</li>
+                            <li>Reduced maintenance overhead by migrating legacy layouts to modern, responsive builds</li>
+                            <li>Integrated third-party APIs and databases such as MySQL and Supabase for secure backend-driven systems</li>
+                            <li>Delivered client-facing platforms with faster onboarding and more reliable transactional workflows</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Graduated June 19, 2026</div>
                         <h3>BS Information Technology</h3>
                         <p class="timeline-company">Bukidnon State University</p>
                         <ul class="timeline-description">
-                            <li>Pursuing Bachelor of Science in Information Technology</li>
+                            <li>Completed Bachelor of Science in Information Technology</li>
                             <li>Active participation in academic and GitHub projects</li>
-                            <li>Hands-on experience with Laravel, Java, Android development, and API integration</li>
+                            <li>Hands-on experience with Laravel, Java, Android development, API integration, and networking concepts</li>
                             <li>Consistent Dean's Lister recognition</li>
                         </ul>
                     </div>
@@ -809,56 +907,64 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Certifications & Achievements</h2>
-                <p class="section-subtitle">Professional certifications and awards</p>
+                <p class="section-subtitle">Certifications, competitions, and academic recognition</p>
             </div>
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="bi bi-shield-check"></i>
+            <div class="certifications-carousel" aria-label="Certifications and achievements carousel">
+                <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous certification">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+                <div class="certifications-track" id="certificationsTrack" tabindex="0">
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3>Cisco Cybersecurity</h3>
+                        <p>Cisco Networking Academy</p>
                     </div>
-                    <h3>Cisco Cybersecurity</h3>
-                    <p>Cisco Networking Academy</p>
-                </div>
 
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="bi bi-diagram-3"></i>
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h3>CCNA Introduction</h3>
+                        <p>Cisco Networking Academy</p>
                     </div>
-                    <h3>CCNA Introduction</h3>
-                    <p>Cisco Networking Academy</p>
-                </div>
 
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="bi bi-router"></i>
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <i class="bi bi-router"></i>
+                        </div>
+                        <h3>CCNA Switching & Routing</h3>
+                        <p>Cisco Networking Academy</p>
                     </div>
-                    <h3>CCNA Switching & Routing</h3>
-                    <p>Cisco Networking Academy</p>
-                </div>
 
-                <div class="certification-card highlight">
-                    <div class="certification-icon">
-                        <i class="bi bi-trophy"></i>
+                    <div class="certification-card highlight">
+                        <div class="certification-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <h3>Hack4Gov Region X</h3>
+                        <p>1st Runner-Up · 2025</p>
                     </div>
-                    <h3>Hack4Gov Region X</h3>
-                    <p>1st Runner Up</p>
-                </div>
 
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="bi bi-file-earmark-code"></i>
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <i class="bi bi-file-earmark-code"></i>
+                        </div>
+                        <h3>TOPCIT Level 2</h3>
+                        <p>Test of Practical Competency in ICT</p>
                     </div>
-                    <h3>TOPCIT Level 2</h3>
-                    <p>Test of Practical Competency in ICT</p>
-                </div>
 
-                <div class="certification-card highlight">
-                    <div class="certification-icon">
-                        <i class="bi bi-award"></i>
+                    <div class="certification-card highlight">
+                        <div class="certification-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h3>Dean's Lister</h3>
+                        <p>Multiple semesters of academic excellence</p>
                     </div>
-                    <h3>Dean's Lister</h3>
-                    <p>Multiple Semesters</p>
                 </div>
+                <button class="carousel-arrow carousel-arrow-next" type="button" aria-label="Next certification">
+                    <i class="bi bi-arrow-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -984,11 +1090,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="bi bi-arrow-up"></i>
-    </button>
 
     <!-- JavaScript -->
     <script src="js/main.js" defer></script>

@@ -93,14 +93,43 @@
 
 /* ── SCROLL PROGRESS RING ────────────────────────────────────── */
 .scroll-progress-ring-wrap {
-  position: fixed; bottom: 5.25rem; right: 1.5rem; z-index: 9990;
-  width: 54px; height: 54px; display: flex; align-items: center; justify-content: center;
-  pointer-events: none; opacity: 0; transform: translateX(12px);
-  animation: ring-fadein .7s ease 1.5s forwards;
+  position: fixed; bottom: 1.1rem; right: 1.1rem; z-index: 9990;
+  width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
+  border: 0; padding: 0; border-radius: 9999px; cursor: pointer;
+  background: radial-gradient(circle at 30% 30%, rgba(110,231,183,.24), rgba(56,189,248,.12) 52%, rgba(9,11,16,.9) 100%);
+  box-shadow: 0 18px 42px rgba(0,0,0,.38), 0 0 0 1px rgba(167,243,208,.15) inset;
+  opacity: 0; transform: translateX(12px) scale(.92);
+  pointer-events: none;
+  transition: opacity .28s ease, transform .28s cubic-bezier(0.22,1,0.36,1), box-shadow .28s ease;
 }
-@keyframes ring-fadein { to { opacity: 1; transform: translateX(0); } }
-.scroll-progress-ring-svg { width: 54px; height: 54px; position: absolute; filter: drop-shadow(0 0 6px rgba(56,189,248,.35)); }
-.scroll-progress-pct { position: absolute; font-size: .6rem; font-weight: 800; color: #a7f3d0; letter-spacing: .04em; }
+.scroll-progress-ring-wrap--visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+}
+.scroll-progress-ring-wrap:hover {
+  transform: translateX(0) scale(1.06);
+  box-shadow: 0 22px 48px rgba(0,0,0,.44), 0 0 0 1px rgba(167,243,208,.24) inset, 0 0 24px rgba(56,189,248,.18);
+}
+.scroll-progress-ring-svg { width: 60px; height: 60px; position: absolute; filter: drop-shadow(0 0 6px rgba(56,189,248,.35)); }
+.scroll-progress-arrow {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  color: #eafff7;
+  font-size: 1.45rem;
+  line-height: 1;
+  text-shadow: 0 0 14px rgba(110,231,183,.35);
+}
+.scroll-progress-pct {
+  position: absolute;
+  bottom: 10px;
+  font-size: .58rem;
+  font-weight: 800;
+  color: #a7f3d0;
+  letter-spacing: .08em;
+}
 
 /* ── NAV SLIDER ──────────────────────────────────────────────── */
 .nav-slider-indicator {

@@ -68,7 +68,7 @@ class Navigation {
         // Close menu on link click (mobile)
         this.navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= 980) {
                     this.closeMenu();
                 }
                 this.setActiveLink(link);
@@ -82,7 +82,7 @@ class Navigation {
         window.addEventListener('scroll', debounce(() => this.updateActiveLink(), 100));
 
         window.addEventListener('resize', debounce(() => {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 980) {
                 this.closeMenu();
             }
         }, 100));
@@ -253,7 +253,7 @@ class ScrollAnimations {
 
 class BackToTop {
     constructor() {
-        this.button = document.getElementById('backToTop');
+        this.button = document.querySelector('.scroll-progress-ring-wrap');
         this.init();
     }
     
@@ -536,7 +536,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
     new Navigation();
     new ScrollAnimations();
-    new BackToTop();
     new ContactForm();
     new PerformanceMonitor();
     
