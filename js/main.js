@@ -529,6 +529,218 @@ function showConsoleWelcome() {
 }
 
 // ==========================================
+// Role & Project Showcase Filtering
+// ==========================================
+
+class ProjectFilters {
+    constructor() {
+        this.filterButtons = document.querySelectorAll('.filter-btn');
+        this.rolePills = document.querySelectorAll('.role-pill');
+        this.projectCards = document.querySelectorAll('.project-card');
+        this.serviceCards = document.querySelectorAll('.service-card');
+        
+        this.init();
+    }
+    
+    init() {
+        // Handle Project Filter Bar
+        this.filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                this.setActiveFilter(btn, this.filterButtons);
+                this.filterProjects(filter);
+                
+                // Sync with role pill if matching
+                const matchingPill = Array.from(this.rolePills).find(p => p.getAttribute('data-role-target') === filter);
+                if (matchingPill) {
+                    this.setActiveFilter(matchingPill, this.rolePills);
+                    this.filterServices(filter);
+                }
+            });
+        });
+        
+        // Handle Role Selector Pills
+        this.rolePills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                const role = pill.getAttribute('data-role-target');
+                this.setActiveFilter(pill, this.rolePills);
+                this.filterServices(role);
+                
+                // Sync with project filter buttons if matching
+                const matchingBtn = Array.from(this.filterButtons).find(b => b.getAttribute('data-filter') === role);
+                if (matchingBtn) {
+                    this.setActiveFilter(matchingBtn, this.filterButtons);
+                    this.filterProjects(role);
+                }
+            });
+        });
+
+        // Handle Service Hire Buttons (Pre-select form option)
+        document.querySelectorAll('.service-hire-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const serviceOpt = btn.getAttribute('data-service-option');
+                const selectElement = document.getElementById('serviceSelect');
+                if (selectElement && serviceOpt) {
+                    selectElement.value = serviceOpt;
+                }
+            });
+        });
+    }
+    
+    setActiveFilter(activeElement, group) {
+        group.forEach(item => item.classList.remove('active'));
+        activeElement.classList.add('active');
+    }
+    
+    filterProjects(filter) {
+        this.projectCards.forEach(card => {
+            const categories = card.getAttribute('data-category') || '';
+            if (filter === 'all' || categories.includes(filter)) {
+                card.style.display = '';
+                card.style.opacity = '1';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    
+    filterServices(role) {
+        this.serviceCards.forEach(card => {
+            const serviceType = card.getAttribute('data-service') || '';
+            if (role === 'all' || serviceType === role) {
+                card.style.display = '';
+                card.style.opacity = '1';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+}
+
+// ==========================================
+// Case Study Modal System
+// ==========================================
+
+class CaseStudyModal {
+    constructor() {
+        this.modal = document.getElementById('caseStudyModal');
+        this.closeBtns = [document.getElementById('modalCloseBtn'), document.getElementById('modalCloseFooterBtn')];
+        this.caseStudyData = {
+            'everly-plumbing': {
+                title: 'Everly Plumbing',
+                category: 'WordPress Migration & Custom Laravel Build',
+                stack: ['WordPress', 'Laravel Blade', 'PHP', 'APIs', 'SEO Audit'],
+                image: 'assets/everly-plumbing-preview.png',
+                challenge: 'The client needed a high-performance web platform for residential and commercial plumbing services with responsive quote inquiry capabilities and fast page speed.',
+                solution: 'Migrated legacy WordPress pages to a lightweight custom Laravel Blade application, integrated appointment booking API endpoints, structured mobile-first landing pages, and optimized Core Web Vitals.',
+                impact: [
+                    '⚡ Over 50% faster page load speed compared to legacy WordPress installation',
+                    '📱 100% responsive experience tailored for mobile, tablet, and desktop views',
+                    '📅 Streamlined quote request and appointment lead generation funnel'
+                ],
+                link: 'http://everlyplumbing.com/'
+            },
+            'salt-lyf-cruises': {
+                title: 'Salt Lyf Cruises',
+                category: 'Squarespace Customization & UI Polish',
+                stack: ['Squarespace', 'Custom CSS', 'JavaScript', 'UI/UX Polish'],
+                image: 'assets/salt-lyf-cruises-preview.png',
+                challenge: 'Salt Lyf Cruises required an engaging, luxury-tier tour website presenting destinations, itinerary packages, and direct booking inquiries.',
+                solution: 'Redesigned and customized the Squarespace platform using bespoke CSS/JS code injection, brand-color refinements, optimized image assets, and structured the reservation funnel.',
+                impact: [
+                    '⛵ High-converting layout designed for luxury cruise package browsing',
+                    '🎨 Custom CSS and JavaScript code injection for bespoke buttons and glass cards',
+                    '📈 Clear user journey leading directly to reservation request forms'
+                ],
+                link: 'https://www.saltlyfcruises.com/'
+            },
+            'everly-bookkeeping': {
+                title: 'Everly Bookkeeping',
+                category: 'Custom Full-Stack Laravel Web Application',
+                stack: ['Laravel', 'PHP', 'MySQL', 'Interactive UI'],
+                image: 'assets/everly-bookkeeping-preview.png',
+                challenge: 'A bookkeeping firm needed a trusted, professional website with interactive consultation features to convert incoming business clients.',
+                solution: 'Engineered a custom Laravel web application from scratch with realtime messaging-style consultation tools, clear service package breakdowns, and secure client onboarding workflows.',
+                impact: [
+                    '💼 Bespoke full-stack Laravel application deployed to production',
+                    '💬 Interactive consultation experience for prospective financial clients',
+                    '🔒 Secure backend database architecture with optimized models'
+                ],
+                link: 'https://www.everlybookkeeping.com/'
+            }
+        };
+        
+        this.init();
+    }
+    
+    init() {
+        if (!this.modal) return;
+        
+        // Trigger buttons
+        document.querySelectorAll('.view-case-study-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const projectId = btn.getAttribute('data-project-id');
+                if (projectId && this.caseStudyData[projectId]) {
+                    this.openModal(this.caseStudyData[projectId]);
+                }
+            });
+        });
+        
+        // Close handlers
+        this.closeBtns.forEach(btn => {
+            if (btn) btn.addEventListener('click', () => this.closeModal());
+        });
+        
+        // Backdrop click close
+        this.modal.addEventListener('click', (e) => {
+            if (e.target === this.modal) this.closeModal();
+        });
+        
+        // Escape key close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+                this.closeModal();
+            }
+        });
+    }
+    
+    openModal(data) {
+        document.getElementById('modalCategory').textContent = data.category;
+        document.getElementById('modalTitle').textContent = data.title;
+        
+        // Render stack badges
+        const stackContainer = document.getElementById('modalStack');
+        stackContainer.innerHTML = data.stack.map(s => `<span class="modal-stack-badge">${s}</span>`).join('');
+        
+        // Media
+        document.getElementById('modalMedia').innerHTML = `<img src="${data.image}" alt="${data.title} preview" loading="lazy" />`;
+        
+        // Sections
+        document.getElementById('modalChallenge').textContent = data.challenge;
+        document.getElementById('modalSolution').textContent = data.solution;
+        
+        // Impact
+        const impactContainer = document.getElementById('modalImpact');
+        impactContainer.innerHTML = data.impact.map(item => `<li style="display:flex; align-items:center; gap:0.5rem;"><i class="bi bi-check-circle-fill" style="color: var(--color-primary);"></i> ${item}</li>`).join('');
+        
+        // Live link
+        const liveLink = document.getElementById('modalLiveLink');
+        liveLink.href = data.link;
+        
+        // Show modal
+        this.modal.classList.add('active');
+        this.modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    closeModal() {
+        this.modal.classList.remove('active');
+        this.modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+}
+
+// ==========================================
 // Initialize Everything
 // ==========================================
 
@@ -538,6 +750,8 @@ document.addEventListener('DOMContentLoaded', () => {
     new ScrollAnimations();
     new ContactForm();
     new PerformanceMonitor();
+    new ProjectFilters();
+    new CaseStudyModal();
     
     // Optional: Uncomment for custom cursor on desktop
     // new CursorEffects();
