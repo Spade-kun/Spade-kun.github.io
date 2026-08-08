@@ -4,7 +4,13 @@
   "description": "[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://spade-kun.github.io/)\r [![Portfolio](https://img.shields.io/badge/Portfolio-Personal-blue)](https://spade-kun.github.io/)",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:html": "htmlhint *.html",
+    "lint:js": "node --check main.js js/*.js",
+    "lint": "npm run lint:html && npm run lint:js",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.1.4"
   },
   "repository": {
     "type": "git",

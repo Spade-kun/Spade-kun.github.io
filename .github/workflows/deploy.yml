@@ -19,7 +19,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # CI Job: Code Quality & Linting
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run CI Linting & HTML/JS Validation
+        run: npm test
+
+  # CD Job: Deploy to GitHub Pages (only runs if lint job passes)
   deploy:
+    needs: lint
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -34,7 +54,6 @@ jobs:
       - name: Upload Static Files Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload the static website files in the root folder
           path: '.'
 
       - name: Deploy to GitHub Pages
