@@ -1,0 +1,23 @@
+# Noel Raterta Jr. (Spade-kun)
+> Full-Stack Developer & Systems Builder. Based in Malaybalay City, Bukidnon, Philippines.
+> Education: BS in Information Technology at Bukidnon State University (Class of 2026).
+
+## Core Competencies
+- Full-Stack Web Development: Next.js, React, Node.js, PHP, Laravel, Tailwind CSS, HTML5.
+- Systems & Desktop Programming: Java (Swing, OOP, JDBC), C.
+- Scripting & Mechanics: Python, Pygame (continuous-time loops, collision physics).
+- Databases: MySQL (relational schema design, transactions, indexing), MongoDB.
+
+## Selected Systems
+1. Dental Clinic Management System: Full-stack PHP/MySQL clinic booking & administrative system.
+   - URL: https://github.com/Spade-kun/DENTAL_CLINIC_WEBSITE
+2. Student Enrollment GUI: Java Swing academic record management engine with JDBC persistence.
+   - URL: https://github.com/Spade-kun/Student_Enrollment_GUI
+3. Move or Die Game: Python 2D action game loop with continuous speed decay constraints.
+   - URL: https://github.com/Spade-kun/MOVE_OR_DIE_GAME
+4. Client Web Suite: 10+ delivered responsive commercial websites with 100% client satisfaction.
+
+## Contact & Links
+- Website: https://spade-kun.github.io/
+- GitHub: https://github.com/Spade-kun
+- Email: noelratertajr@gmail.com

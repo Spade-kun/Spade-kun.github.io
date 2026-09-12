@@ -1,34 +1,45 @@
-# OS Files
+# Dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Next.js build artifacts
+/.next/
+/out/
+/build
+/dist
+
+# Testing & Playwright
+/coverage
+/.playwright-mcp/
+
+# Misc & OS
 .DS_Store
 Thumbs.db
-
-# Editor Files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Node modules (if you add npm later)
-node_modules/
-
-# Logs
+*.pem
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 # Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*
 
-# Build files
-dist/
-build/
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.tsbuildinfo
+next-env.d.ts
 
-# Temporary files
+# Temporary files & Screenshots
 *.tmp
 .cache/
+portfolio/
