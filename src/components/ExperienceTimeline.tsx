@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight, Download, Calendar, MapPin, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, Download, Calendar, MapPin, Sparkles, CheckCircle2, Network, ListTree } from "lucide-react";
 import { EXPERIENCES, PERSONAL_INFO } from "@/data/portfolioData";
 import { sounds } from "@/utils/audio";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ExperienceTopologyGraph } from "@/components/ExperienceTopologyGraph";
 
 export const ExperienceTimeline: React.FC = () => {
+  const [viewMode, setViewMode] = useState<"topology" | "timeline">("topology");
   const [activeExpIdx, setActiveExpIdx] = useState<number>(0);
 
   return (
@@ -33,8 +35,56 @@ export const ExperienceTimeline: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        {/* Editorial Wireframe Timeline with Animated Horizontal Line Reveals */}
-        <div className="mt-16 space-y-16 relative">
+        {/* View Switcher: Interactive Systems Topology vs Editorial Wireframe Timeline */}
+        <div className="mt-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-2 font-mono text-xs text-zinc-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+            <span>Inspection Engine:</span>
+            <span className="text-zinc-200 font-medium">
+              {viewMode === "topology" ? "Interactive Neural Topology Graph" : "Chronological Editorial Timeline"}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-1 border border-white/[0.1] bg-black/40 p-1 rounded-xl shrink-0 font-mono text-xs">
+            <button
+              onClick={() => {
+                sounds.playClick("soft");
+                setViewMode("topology");
+              }}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+                viewMode === "topology"
+                  ? "bg-white text-black font-medium shadow-sm"
+                  : "text-zinc-400 hover:text-white"
+              }`}
+            >
+              <Network className="h-3.5 w-3.5" />
+              <span>Systems Topology Graph</span>
+            </button>
+            <button
+              onClick={() => {
+                sounds.playClick("soft");
+                setViewMode("timeline");
+              }}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+                viewMode === "timeline"
+                  ? "bg-white text-black font-medium shadow-sm"
+                  : "text-zinc-400 hover:text-white"
+              }`}
+            >
+              <ListTree className="h-3.5 w-3.5" />
+              <span>Editorial Timeline</span>
+            </button>
+          </div>
+        </div>
+
+        {/* View Mode 1: Systems Architecture Topology (Interactive Graph Mode) */}
+        {viewMode === "topology" ? (
+          <div className="mt-8">
+            <ExperienceTopologyGraph onSwitchToTimeline={() => setViewMode("timeline")} />
+          </div>
+        ) : (
+          /* View Mode 2: Editorial Wireframe Timeline with Animated Horizontal Line Reveals */
+          <div className="mt-16 space-y-16 relative">
           {EXPERIENCES.map((exp, idx) => {
             const isSelected = activeExpIdx === idx;
 
@@ -131,6 +181,7 @@ export const ExperienceTimeline: React.FC = () => {
             );
           })}
         </div>
+      )}
 
         {/* Minimalist Editorial Action Bar (No box container, clean line aesthetic) */}
         <ScrollReveal variant="fade-up" delay={100}>

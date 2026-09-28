@@ -43,3 +43,5 @@ next-env.d.ts
 *.tmp
 .cache/
 portfolio/
+AGENTS.md
+CLAUDE.md
