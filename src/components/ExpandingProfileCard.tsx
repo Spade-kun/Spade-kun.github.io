@@ -137,7 +137,7 @@ export const ExpandingProfileCard: React.FC<ExpandingProfileCardProps> = ({ onOp
                   CMS &amp; Website Builders
                 </div>
                 <div className="font-mono text-[11px] text-zinc-400 leading-relaxed">
-                  Shopify (Liquid), Wix Studio, Squarespace &amp; WordPress.
+                  Squarespace, WordPress &amp; E-Commerce Web Tools.
                 </div>
               </div>
               <div className="p-3.5 rounded-xl border border-white/[0.08] bg-white/[0.02]">

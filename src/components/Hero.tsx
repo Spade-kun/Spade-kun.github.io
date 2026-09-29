@@ -185,11 +185,11 @@ export const Hero: React.FC = () => {
           </div>
           <div className="space-y-1">
             <div className="font-mono text-[11px] text-zinc-500 uppercase tracking-wider">Client Delivery</div>
-            <div className="font-mono text-sm text-zinc-200 font-medium">10+ Deployed Builds</div>
+            <div className="font-mono text-sm text-zinc-200 font-medium">4 Client Web Apps</div>
           </div>
           <div className="space-y-1">
             <div className="font-mono text-[11px] text-zinc-500 uppercase tracking-wider">Focus Stack</div>
-            <div className="font-mono text-sm text-zinc-200 font-medium">Laravel · Next.js · MySQL</div>
+            <div className="font-mono text-sm text-zinc-200 font-medium">Next.js · Laravel · Supabase</div>
           </div>
           <div className="space-y-1">
             <div className="font-mono text-[11px] text-zinc-500 uppercase tracking-wider">Availability</div>

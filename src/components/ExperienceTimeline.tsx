@@ -1,8 +1,21 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight, Download, Calendar, MapPin, Sparkles, CheckCircle2, Network, ListTree } from "lucide-react";
-import { EXPERIENCES, PERSONAL_INFO } from "@/data/portfolioData";
+import { 
+  ArrowUpRight, 
+  Download, 
+  Calendar, 
+  MapPin, 
+  Sparkles, 
+  CheckCircle2, 
+  Network, 
+  ListTree,
+  ShieldCheck,
+  Trophy,
+  Award,
+  ExternalLink
+} from "lucide-react";
+import { EXPERIENCES, PERSONAL_INFO, CERTIFICATIONS, AWARDS } from "@/data/portfolioData";
 import { sounds } from "@/utils/audio";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ExperienceTopologyGraph } from "@/components/ExperienceTopologyGraph";
@@ -30,7 +43,7 @@ export const ExperienceTimeline: React.FC = () => {
               </h2>
             </div>
             <p className="max-w-md font-mono text-xs text-zinc-400 leading-relaxed">
-              Real-world client deployments, commercial full-stack contributions, and computer science foundations.
+              Official verified career track: full-stack web development, automated workflows, government ICT infrastructure, and academic foundation.
             </p>
           </div>
         </ScrollReveal>
@@ -41,7 +54,7 @@ export const ExperienceTimeline: React.FC = () => {
             <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
             <span>Inspection Engine:</span>
             <span className="text-zinc-200 font-medium">
-              {viewMode === "topology" ? "Interactive Neural Topology Graph" : "Chronological Editorial Timeline"}
+              {viewMode === "topology" ? "Interactive Orbital Telemetry Cockpit" : "Chronological Editorial Timeline"}
             </span>
           </div>
 
@@ -58,7 +71,7 @@ export const ExperienceTimeline: React.FC = () => {
               }`}
             >
               <Network className="h-3.5 w-3.5" />
-              <span>Systems Topology Graph</span>
+              <span>Cosmic Command Deck</span>
             </button>
             <button
               onClick={() => {
@@ -77,7 +90,7 @@ export const ExperienceTimeline: React.FC = () => {
           </div>
         </div>
 
-        {/* View Mode 1: Systems Architecture Topology (Interactive Graph Mode) */}
+        {/* View Mode 1: Systems Architecture Topology (Unique Cosmic Command Deck) */}
         {viewMode === "topology" ? (
           <div className="mt-8">
             <ExperienceTopologyGraph onSwitchToTimeline={() => setViewMode("timeline")} />
@@ -85,105 +98,149 @@ export const ExperienceTimeline: React.FC = () => {
         ) : (
           /* View Mode 2: Editorial Wireframe Timeline with Animated Horizontal Line Reveals */
           <div className="mt-16 space-y-16 relative">
-          {EXPERIENCES.map((exp, idx) => {
-            const isSelected = activeExpIdx === idx;
+            {EXPERIENCES.map((exp, idx) => {
+              const isSelected = activeExpIdx === idx;
 
-            return (
-              <ScrollReveal
-                key={idx}
-                variant="fade-up"
-                delay={idx * 80}
-              >
-                <div
-                  onMouseEnter={() => {
-                    setActiveExpIdx(idx);
-                    sounds.playHover();
-                  }}
-                  className="group relative cursor-pointer"
+              return (
+                <ScrollReveal
+                  key={idx}
+                  variant="fade-up"
+                  delay={idx * 80}
                 >
-                  {/* Top Animated Laser Reveal Line */}
-                  <div className="relative w-full h-[1px] bg-white/[0.08] overflow-hidden mb-8">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r from-sky-400 via-white/80 to-transparent transition-transform duration-700 origin-left ${
-                        isSelected ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0 group-hover:scale-x-75 group-hover:opacity-60"
-                      }`}
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    {/* Left: Time Period & Index */}
-                    <div className="lg:col-span-3 space-y-2">
-                      <ScrollReveal variant="pop-up" delay={50}>
-                        <div className="font-mono text-xs text-sky-400 uppercase tracking-wider flex items-center gap-2">
-                          <span className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                            isSelected ? "bg-sky-400 shadow-md shadow-sky-400/50 scale-125" : "bg-zinc-600"
-                          }`} />
-                          <span>0{idx + 1} //</span>
-                        </div>
-                        <div className="font-mono text-sm sm:text-base font-semibold text-white mt-1">
-                          {exp.period}
-                        </div>
-                        <div className="flex items-center gap-1.5 font-mono text-xs text-zinc-500 mt-1">
-                          <MapPin className="h-3 w-3 text-zinc-500" />
-                          <span>{exp.location}</span>
-                        </div>
-                      </ScrollReveal>
+                  <div
+                    onMouseEnter={() => {
+                      setActiveExpIdx(idx);
+                      sounds.playHover();
+                    }}
+                    className="group relative cursor-pointer"
+                  >
+                    {/* Top Animated Laser Reveal Line */}
+                    <div className="relative w-full h-[1px] bg-white/[0.08] overflow-hidden mb-8">
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-r from-sky-400 via-white/80 to-transparent transition-transform duration-700 origin-left ${
+                          isSelected ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0 group-hover:scale-x-75 group-hover:opacity-60"
+                        }`}
+                      />
                     </div>
 
-                    {/* Center & Right: Role, Organization & Architectural Bullet Lines */}
-                    <div className="lg:col-span-9 space-y-6">
-                      <ScrollReveal variant="pop-up" delay={80}>
-                        <div>
-                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight group-hover:text-sky-300 transition-colors">
-                            {exp.role}
-                          </h3>
-                          <div className="font-mono text-xs sm:text-sm text-zinc-400 mt-1.5 flex items-center gap-2">
-                            <span className="text-zinc-200 font-medium">{exp.organization}</span>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                      {/* Left: Time Period & Index */}
+                      <div className="lg:col-span-3 space-y-2">
+                        <ScrollReveal variant="pop-up" delay={50}>
+                          <div className="font-mono text-xs text-sky-400 uppercase tracking-wider flex items-center gap-2">
+                            <span className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                              isSelected ? "bg-sky-400 shadow-md shadow-sky-400/50 scale-125" : "bg-zinc-600"
+                            }`} />
+                            <span>0{idx + 1} //</span>
                           </div>
-                        </div>
-                      </ScrollReveal>
+                          <div className="font-mono text-sm sm:text-base font-semibold text-white mt-1">
+                            {exp.period}
+                          </div>
+                          <div className="flex items-center gap-1.5 font-mono text-xs text-zinc-500 mt-1">
+                            <MapPin className="h-3 w-3 text-zinc-500" />
+                            <span>{exp.location}</span>
+                          </div>
+                        </ScrollReveal>
+                      </div>
 
-                      {/* Line-Animated Architectural Milestones with Individual Pop-Up Triggers */}
-                      <ul className="space-y-3.5 pt-2">
-                        {exp.bullets.map((bullet, bIdx) => (
-                          <li key={bIdx}>
-                            <ScrollReveal variant="pop-up" delay={100 + bIdx * 45}>
-                              <div className="flex items-start gap-3.5 group/item transition-colors">
-                                <span className="text-sky-400 font-mono text-xs mt-1 transition-transform group-hover/item:translate-x-0.5">
-                                  ↳
-                                </span>
-                                <span className="text-sm sm:text-base text-zinc-300 group-hover/item:text-white leading-relaxed font-normal">
-                                  {bullet}
-                                </span>
-                              </div>
-                            </ScrollReveal>
-                          </li>
-                        ))}
-                      </ul>
+                      {/* Center & Right: Role, Organization & Architectural Bullet Lines */}
+                      <div className="lg:col-span-9 space-y-6">
+                        <ScrollReveal variant="pop-up" delay={80}>
+                          <div>
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight group-hover:text-sky-300 transition-colors">
+                              {exp.role}
+                            </h3>
+                            <div className="font-mono text-xs sm:text-sm text-zinc-400 mt-1.5 flex items-center gap-2">
+                              <span className="text-zinc-200 font-medium">{exp.organization}</span>
+                            </div>
+                          </div>
+                        </ScrollReveal>
 
-                      {/* Technologies Ribbon with Pop-Up Trigger */}
-                      <ScrollReveal variant="pop-up" delay={200}>
-                        <div className="flex flex-wrap items-center gap-2 pt-2">
-                          {exp.technologies.map((tech) => (
-                            <span
-                              key={tech}
-                              className="rounded-full border border-white/[0.08] bg-white/[0.02] px-3 py-1 font-mono text-xs text-zinc-400 hover:text-white hover:border-white/[0.2] transition-colors"
-                            >
-                              {tech}
-                            </span>
+                        {/* Line-Animated Architectural Milestones */}
+                        <ul className="space-y-3.5 pt-2">
+                          {exp.bullets.map((bullet, bIdx) => (
+                            <li key={bIdx}>
+                              <ScrollReveal variant="pop-up" delay={100 + bIdx * 45}>
+                                <div className="flex items-start gap-3.5 group/item transition-colors">
+                                  <span className="text-sky-400 font-mono text-xs mt-1 transition-transform group-hover/item:translate-x-0.5">
+                                    ↳
+                                  </span>
+                                  <span className="text-sm sm:text-base text-zinc-300 group-hover/item:text-white leading-relaxed font-normal">
+                                    {bullet}
+                                  </span>
+                                </div>
+                              </ScrollReveal>
+                            </li>
                           ))}
-                        </div>
-                      </ScrollReveal>
+                        </ul>
+
+                        {/* Technologies Ribbon */}
+                        <ScrollReveal variant="pop-up" delay={200}>
+                          <div className="flex flex-wrap items-center gap-2 pt-2">
+                            {exp.technologies.map((tech) => (
+                              <span
+                                key={tech}
+                                className="rounded-full border border-white/[0.08] bg-white/[0.02] px-3 py-1 font-mono text-xs text-zinc-400 hover:text-white hover:border-white/[0.2] transition-colors"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </ScrollReveal>
+                      </div>
                     </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+
+            {/* Verified Certifications & Honors Section (Strictly from PDF) */}
+            <div className="pt-12 border-t border-white/[0.08]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Certifications Card */}
+                <div className="rounded-2xl border border-white/[0.08] bg-[#0c0d16]/80 p-6 backdrop-blur-md space-y-4">
+                  <div className="flex items-center gap-2 font-mono text-xs text-sky-400 uppercase tracking-wider">
+                    <ShieldCheck className="h-4 w-4 text-sky-400" />
+                    <span>Verified Certifications</span>
+                  </div>
+                  <div className="space-y-3">
+                    {CERTIFICATIONS.map((cert, cIdx) => (
+                      <div key={cIdx} className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                        <CheckCircle2 className="h-4 w-4 text-sky-400 shrink-0 mt-0.5" />
+                        <div>
+                          <div className="text-sm font-semibold text-white">{cert.name}</div>
+                          <div className="text-xs font-mono text-zinc-400 mt-0.5">{cert.issuer} · {cert.status}</div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </ScrollReveal>
-            );
-          })}
-        </div>
-      )}
 
-        {/* Minimalist Editorial Action Bar (No box container, clean line aesthetic) */}
+                {/* Awards & Honors Card */}
+                <div className="rounded-2xl border border-white/[0.08] bg-[#0c0d16]/80 p-6 backdrop-blur-md space-y-4">
+                  <div className="flex items-center gap-2 font-mono text-xs text-amber-400 uppercase tracking-wider">
+                    <Trophy className="h-4 w-4 text-amber-400" />
+                    <span>Awards & Honors</span>
+                  </div>
+                  <div className="space-y-3">
+                    {AWARDS.map((award, aIdx) => (
+                      <div key={aIdx} className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] space-y-2">
+                        <div className="flex items-center justify-between">
+                          <div className="text-sm font-semibold text-white">{award.title}</div>
+                          <span className="font-mono text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">{award.year}</span>
+                        </div>
+                        <div className="text-xs font-mono text-zinc-400">{award.organization} · {award.location}</div>
+                        <p className="text-xs text-zinc-300 leading-relaxed">{award.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Minimalist Editorial Action Bar */}
         <ScrollReveal variant="fade-up" delay={100}>
           <div className="mt-20 pt-10 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div>

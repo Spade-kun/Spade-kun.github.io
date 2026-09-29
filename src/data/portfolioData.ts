@@ -25,15 +25,32 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface Certification {
+  name: string;
+  issuer: string;
+  status: string;
+}
+
+export interface Award {
+  title: string;
+  organization: string;
+  year: string;
+  location: string;
+  description: string;
+}
+
 export const PERSONAL_INFO = {
-  name: "Noel Raterta Jr.",
+  name: "Noel C. Raterta Jr.",
   handle: "Spade-kun",
-  title: "Full-Stack Developer, Web Architect & Automation Builder",
+  title: "Full Stack Developer",
+  tagline: "Building scalable, high-performance web applications & automated pipelines",
   location: "Malaybalay City, Bukidnon, Philippines",
+  phone: "0969-067-3159",
   timezone: "UTC+8",
   status: "Available for engineering roles & select freelance contracts",
-  shortBio: "Web architect and automation engineer specializing in custom frameworks (Laravel, Next.js), website builders & CMS (Shopify, Wix, Squarespace, WordPress), and autonomous n8n workflows.",
-  editorialBio: "Specializing in custom framework development with Laravel & Next.js, bespoke CMS and e-commerce stores (Shopify, Wix, Squarespace, WordPress), and autonomous n8n lead generation agent pipelines. Crafting deliberate, high-converting digital solutions end-to-end.",
+  summary: "Full Stack Developer experienced in building web applications with Next.js, Laravel, and modern JavaScript frameworks. Skilled in database management (MySQL, Supabase) and process automation. Committed to delivering scalable, high-performance solutions.",
+  shortBio: "Full Stack Developer experienced in Next.js, Laravel, modern JavaScript frameworks, database management (MySQL, Supabase), and n8n process automation.",
+  editorialBio: "Full Stack Developer experienced in building web applications with Next.js, Laravel, and modern JavaScript frameworks. Skilled in database management (MySQL, Supabase) and process automation. Committed to delivering scalable, high-performance solutions.",
   contactEmail: "noelratertajr@gmail.com",
   links: {
     github: "https://github.com/Spade-kun",
@@ -44,22 +61,106 @@ export const PERSONAL_INFO = {
   }
 };
 
+export const CERTIFICATIONS: Certification[] = [
+  {
+    name: "CCNA: Switching, Routing, and Wireless Essentials",
+    issuer: "Cisco Networking Academy",
+    status: "Verified Credential"
+  },
+  {
+    name: "Cisco Cybersecurity",
+    issuer: "Cisco",
+    status: "Verified Credential"
+  }
+];
+
+export const AWARDS: Award[] = [
+  {
+    title: "Hack4Gov Region X | First Runner-Up",
+    organization: "Hack4Gov Cybersecurity Challenge",
+    year: "2025",
+    location: "Bukidnon",
+    description: "Contributed to a team-based cybersecurity and solution-development challenge involving problem analysis, collaboration, and presentation."
+  }
+];
+
 export const SKILL_CATEGORIES = [
   {
-    title: "Custom Frameworks & Backend",
-    skills: ["Laravel", "PHP 8+", "Next.js (App Router)", "React", "Node.js", "Express", "Blade Templating", "REST APIs"]
+    title: "Programming Languages",
+    skills: ["Java", "C", "Python", "JavaScript", "PHP", "TypeScript", "AngularJS"]
   },
   {
-    title: "CMS & Website Builders",
-    skills: ["Shopify (Liquid / E-Commerce)", "Wix & Wix Studio", "Squarespace", "WordPress CMS Custom Themes", "ACF & Custom Post Types"]
+    title: "Web & Frameworks",
+    skills: ["HTML", "CSS", "React", "Next.js", "Laravel", "Node.js", "Express", "Angular", "NestJS", "REST APIs", "WordPress", "Squarespace"]
   },
   {
-    title: "Automation & AI Agents",
-    skills: ["n8n Workflow Automation", "Autonomous Lead Generation Agents", "AI Data Enrichment", "Webhooks & API Integrations", "CRM Sync"]
+    title: "Databases & Storage",
+    skills: ["MySQL", "Supabase (PostgreSQL)", "MongoDB (NoSQL)"]
   },
   {
-    title: "Databases & Core Systems",
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "Java (Swing / JDBC)", "Python", "ACID Compliance", "Schema Design"]
+    title: "Automation, CRM & Analytics",
+    skills: ["n8n", "Zoho CRM", "Google Analytics Admin", "Google Search Console", "PageSpeed Insights"]
+  },
+  {
+    title: "IT Support, Tools & Infrastructure",
+    skills: ["Git", "GitHub", "VS Code", "Linux", "Postman", "Figma", "Canva", "Android Studio", "MS Office", "Windows OS support", "Basic Networking (DNS, VLAN, Reverse Proxy)"]
+  },
+  {
+    title: "AI-Assisted Workflow",
+    skills: ["ChatGPT", "Codex", "Gemini", "Claude"]
+  }
+];
+
+export const EXPERIENCES: Experience[] = [
+  {
+    role: "Automation, CRM, Analytics, and Website Tools Practice",
+    organization: "Automation, CRM, Analytics, and Website Tools Practice",
+    location: "Remote / Independent",
+    period: "January 2024 — Present",
+    bullets: [
+      "Automated business processes using n8n workflows, increasing operational efficiency for lead management and task routing.",
+      "Leveraged Zoho CRM and Google Analytics to deliver actionable insights on user engagement and conversion metrics.",
+      "Managed professional web presence for clients via Squarespace, optimizing layouts for brand alignment and SEO performance."
+    ],
+    technologies: ["n8n", "Zoho CRM", "Google Analytics", "Squarespace", "SEO Optimization", "Lead Routing", "Workflow Automation"]
+  },
+  {
+    role: "Web Developer",
+    organization: "Freelance Developer",
+    location: "Malaybalay City, Bukidnon, PH",
+    period: "January 2023 — Present",
+    bullets: [
+      "Developed 4 custom web applications for diverse clients, including platforms for bookkeeping and plumbing services, using a tech stack of Next.js, Laravel, PHP, and Supabase.",
+      "Reduced client site maintenance overhead by migrating legacy layouts to modern, responsive frameworks like Next.js and Laravel, resulting in improved site performance.",
+      "Integrated third-party APIs and databases (MySQL, Supabase) to build secure authentication and backend-driven platforms for small-scale business operations.",
+      "Engineered API integrations for five client-facing platforms over 12 months, automating data exchange between Next.js/Laravel frontends and MySQL/Supabase backends, resulting in 30% faster onboarding and enhanced transactional reliability."
+    ],
+    technologies: ["Next.js", "Laravel", "PHP", "Supabase", "MySQL", "REST APIs", "Authentication", "Tailwind CSS"]
+  },
+  {
+    role: "Intern - Technical Support and Web Development",
+    organization: "Provincial ICT Division (PICTD) Bukidnon",
+    location: "Malaybalay City, Bukidnon",
+    period: "February 2026 — May 2026",
+    bullets: [
+      "Assisted in full-stack development tasks using Angular, NestJS, ORM, and MySQL for inventory and HRMIS-related systems.",
+      "Supported network operations including DNS setup, reverse proxy configuration, IP reassignment, VLAN basics, UTP crimping, LAN repair, switch troubleshooting, and speed testing.",
+      "Performed IT support tasks such as printer sharing fixes, eTRACS installation, device configuration, software troubleshooting, ICT inventory encoding, and workstation maintenance.",
+      "Prepared CCTV, cabinet, and command center layout documentation for infrastructure planning and office monitoring support."
+    ],
+    technologies: ["Angular", "NestJS", "MySQL", "ORM", "DNS Setup", "Reverse Proxy", "VLAN", "eTRACS", "Network Support"]
+  },
+  {
+    role: "Bachelor of Science in Information Technology",
+    organization: "Bukidnon State University",
+    location: "Bukidnon, Philippines",
+    period: "2022 — 2026",
+    bullets: [
+      "Rigorous four-year computing degree with emphasis on Software Engineering, Database Systems, Network Architecture, and Solution Development.",
+      "Earned Cisco CCNA certifications (Switching, Routing, and Wireless Essentials) and Cisco Cybersecurity certification.",
+      "Awarded First Runner-Up in Hack4Gov Region X (2025) cybersecurity and solution-development competition."
+    ],
+    technologies: ["Java", "C", "Python", "Data Structures", "Algorithms", "Cisco CCNA", "Cisco Cybersecurity", "MySQL"]
   }
 ];
 
@@ -69,49 +170,49 @@ export const PROJECTS: Project[] = [
     id: "n8n-lead-gen-agent",
     title: "n8n Autonomous Lead Generation & AI Outreach Agent",
     category: "Automation & AI Workflows",
-    tagline: "Autonomous multi-node lead harvesting, AI prospect qualification, and CRM data enrichment pipeline in n8n.",
-    description: "Production-grade autonomous workflow orchestration system built with n8n. Seamlessly scrapes prospect databases, extracts verified corporate points of contact, evaluates ICP qualification using AI inference, and synchronizes enriched records with downstream CRM notification queues.",
+    tagline: "Automated business processes using n8n workflows for lead management and task routing.",
+    description: "Production-grade workflow orchestration system built with n8n. Scrapes prospect databases, extracts verified contacts, qualifies with AI inference, and synchronizes enriched records with downstream CRM notification queues.",
     architecture: [
-      "Autonomous n8n execution graph with intelligent error handling, retries, and rate limiting",
-      "AI evaluation node dynamically analyzing prospect domain, revenue bracket, and role authority",
-      "Multi-step verification pipeline checking email deliverability and eliminating duplicate contacts",
+      "Automated business processes using n8n workflows, increasing operational efficiency for lead management",
+      "Dynamic prospect qualification logic evaluating authority metrics and corporate alignment",
+      "Structured validation checking email deliverability and eliminating duplicate contacts",
       "Automated payload dispatch to CRM systems with real-time Slack/Webhook telemetry notifications"
     ],
     metrics: [
-      { label: "Automation Engine", value: "n8n Self-Hosted" },
-      { label: "Agent Capability", value: "Autonomous Lead Gen" },
-      { label: "Integration", value: "REST APIs · Webhooks" }
+      { label: "Engine", value: "n8n Automation" },
+      { label: "Function", value: "Lead Routing" },
+      { label: "Protocol", value: "REST APIs · Webhooks" }
     ],
-    tags: ["n8n", "Workflow Automation", "AI Agents", "Lead Generation", "Webhooks", "CRM Integration"],
+    tags: ["n8n", "Workflow Automation", "Lead Management", "Zoho CRM", "Webhooks"],
     video: "/assets/n8n-lead-generation-agent.mp4",
     featured: true,
-    roleDescription: "Automation Architect: Designed end-to-end n8n workflow nodes, data schemas, AI prompt filters, and webhook endpoints."
+    roleDescription: "Automation Developer: Built end-to-end n8n workflow nodes, lead routing schemas, and webhook endpoints."
   },
 
   // 2. Everly Plumbing (Deployed Commercial Platform)
   {
     id: "everly-plumbing",
-    title: "Everly Plumbing Commercial Web Platform",
+    title: "Everly Plumbing Services Platform",
     category: "Deployed Commercial Platform",
-    tagline: "High-performance commercial service website built with Laravel, Blade, and PostgreSQL.",
-    description: "Production commercial platform for Everly Plumbing engineered to capture client service inquiries, showcase commercial plumbing solutions, and ensure rapid page speeds. Developed using Laravel with server-side Blade rendering and a robust PostgreSQL relational database.",
+    tagline: "Custom web application for trade plumbing services built with Next.js, Laravel, and Supabase.",
+    description: "One of 4 custom client web applications engineered for diverse clients. Built to capture client service inquiries, showcase commercial plumbing solutions, and ensure high site performance with modern responsive layouts.",
     architecture: [
-      "Laravel backend with modular MVC architecture and server-rendered Blade views",
-      "PostgreSQL relational schema storing customer leads and service catalogs with index optimization",
-      "Tailored SEO metadata achieving 95+ Core Web Vitals performance across mobile devices",
-      "Automated lead delivery pipeline routing incoming customer inquiries to dispatch"
+      "Modern Next.js and Laravel architecture reducing maintenance overhead",
+      "Relational database storage (MySQL/Supabase) storing customer leads and service catalogs",
+      "Integrated third-party APIs for secure authentication and backend operations",
+      "Mobile-responsive layout optimized for fast page speed and sub-second load times"
     ],
     metrics: [
-      { label: "Stack", value: "Laravel · Blade · PostgreSQL" },
-      { label: "Status", value: "Live Production" },
-      { label: "Performance", value: "Sub-second LCP" }
+      { label: "Tech Stack", value: "Next.js · Laravel · Supabase" },
+      { label: "Category", value: "Plumbing Services" },
+      { label: "Architecture", value: "Responsive Web" }
     ],
-    tags: ["Laravel", "Blade", "PostgreSQL", "PHP", "SEO", "Responsive UI"],
+    tags: ["Next.js", "Laravel", "Supabase", "MySQL", "PHP", "Responsive UI"],
     liveUrl: "https://everlyplumbing.com",
     image: "/assets/everly-plumbing-preview.png",
     video: "/assets/everly-plumbing-demo.mp4",
     featured: true,
-    roleDescription: "Core Contributor & Developer: Implemented responsive views, database queries, and lead routing integration."
+    roleDescription: "Web Developer: Built responsive views, Supabase integration, and automated lead capture routing."
   },
 
   // 3. Everly Bookkeeping (Deployed Commercial Platform)
@@ -119,25 +220,25 @@ export const PROJECTS: Project[] = [
     id: "everly-bookkeeping",
     title: "Everly Bookkeeping Financial Services Platform",
     category: "Deployed Commercial Platform",
-    tagline: "Clean, trustworthy financial services storefront powered by Laravel, Blade, and MySQL.",
-    description: "Commercial web platform designed for accounting and bookkeeping services. Focuses on client conversion funnels, service package transparent breakdowns, and strict relational data management for client intake.",
+    tagline: "Commercial bookkeeping web application powered by Laravel, PHP, and MySQL.",
+    description: "Custom web platform developed for client bookkeeping services. Features clear service breakdowns, secure client intake forms, and automated data exchange between frontend and backend.",
     architecture: [
-      "Laravel MVC architecture with optimized Blade component hierarchy",
-      "MySQL transactional database storing consultation requests and service inquiries",
-      "Custom responsive CSS framework tuned for high readability and professional trust",
-      "SSL/TLS security hardening and secure contact submission endpoints"
+      "Modular MVC architecture with optimized server-rendered components",
+      "MySQL transactional database storing client consultation requests",
+      "Modern, responsive framework migrating legacy layout to improve performance",
+      "API integrations automating data exchange with transactional reliability"
     ],
     metrics: [
-      { label: "Stack", value: "Laravel · Blade · MySQL" },
-      { label: "Status", value: "Live Production" },
+      { label: "Tech Stack", value: "Laravel · PHP · MySQL" },
+      { label: "Category", value: "Bookkeeping Services" },
       { label: "Deployment", value: "Production Cloud" }
     ],
-    tags: ["Laravel", "Blade", "MySQL", "PHP", "Financial Web", "Conversion Funnel"],
+    tags: ["Laravel", "PHP", "MySQL", "Supabase", "Bookkeeping Services"],
     liveUrl: "https://everlybookkeeping.com",
     image: "/assets/everly-bookkeeping-preview.png",
     video: "/assets/everly-bookkeeping-demo.mp4",
     featured: true,
-    roleDescription: "Full-Stack Developer: Built service architecture, MySQL schema, and mobile-first Blade layouts."
+    roleDescription: "Web Developer: Built service architecture, MySQL schema, and responsive UI."
   },
 
   // 4. Deen International (Shopify E-Commerce Store)
@@ -150,15 +251,15 @@ export const PROJECTS: Project[] = [
     architecture: [
       "Custom Shopify Liquid theme modifications and responsive styling adjustments",
       "Optimized product gallery with dynamic variant selection and real-time inventory signals",
-      "Fast checkout flow integrated with global payment processors and currency converters",
+      "Fast checkout flow integrated with payment processors and currency converters",
       "Mobile-optimized cart drawer and speed-optimized merchant asset loading"
     ],
     metrics: [
       { label: "Platform", value: "Shopify E-Commerce" },
-      { label: "Status", value: "Live Global Store" },
+      { label: "Type", value: "Storefront" },
       { label: "Merchandising", value: "Custom Liquid Theme" }
     ],
-    tags: ["Shopify", "Liquid", "E-Commerce", "Payment Gateways", "Conversion Rate Optimization"],
+    tags: ["Shopify", "Liquid", "E-Commerce", "Payment Gateways", "Conversion Optimization"],
     liveUrl: "https://deenintr.com",
     image: "/assets/deen-preview.png",
     video: "/assets/deen-international-demo.mp4",
@@ -166,30 +267,30 @@ export const PROJECTS: Project[] = [
     roleDescription: "E-Commerce Developer: Theme customization, collection layouts, and storefront performance enhancements."
   },
 
-  // 5. Salt Lyf Cruises (Deployed Commercial Platform)
+  // 5. Salt Lyf Cruises (Squarespace Luxury Maritime Platform)
   {
     id: "salt-lyf-cruises",
-    title: "Salt Lyf Cruises Luxury Marine Tourism Experience",
+    title: "Salt Lyf Cruises Maritime Experience",
     category: "Deployed Commercial Platform",
-    tagline: "High-end luxury yacht and cruise booking platform built on Squarespace with bespoke CSS scripting.",
-    description: "Commercial maritime experience platform for luxury ocean cruises and private yacht charter services. Features immersive photography, bespoke booking integration, tour itineraries, and responsive media handling.",
+    tagline: "Professional web presence managed via Squarespace, optimizing layouts for brand alignment and SEO performance.",
+    description: "Client web platform for luxury ocean cruises and yacht charters. Built via Squarespace with custom CSS enhancements, responsive media optimization, and brand alignment.",
     architecture: [
-      "Custom CSS overrides and JavaScript injections customizing Squarespace default layout",
+      "Managed professional web presence for client via Squarespace",
+      "Optimized layout for brand alignment, typography harmony, and SEO performance",
       "Interactive charter inquiry workflow with multi-option package selection",
-      "Responsive hero video and retina image optimization for marine photography",
-      "Cross-browser tested ensuring frictionless booking across iOS and Android devices"
+      "Speed-optimized media delivery ensuring frictionless mobile booking"
     ],
     metrics: [
-      { label: "Platform", value: "Squarespace · Custom CSS" },
-      { label: "Status", value: "Live Production" },
-      { label: "Experience", value: "Luxury Maritime UI" }
+      { label: "Platform", value: "Squarespace" },
+      { label: "Optimization", value: "SEO & Brand Alignment" },
+      { label: "Type", value: "Maritime Tourism" }
     ],
-    tags: ["Squarespace", "Custom CSS", "JavaScript", "Tourism & Hospitality", "Responsive Design"],
+    tags: ["Squarespace", "SEO Performance", "Brand Alignment", "Custom Layouts"],
     liveUrl: "https://saltlyfcruises.com",
     image: "/assets/salt-lyf-cruises-preview.png",
     video: "/assets/salt-lyf-cruises-demo.mp4",
     featured: true,
-    roleDescription: "Web Developer: Custom CSS styling, itinerary layout design, and mobile UX optimization."
+    roleDescription: "Web Developer: Squarespace layout optimization, SEO tuning, and responsive UX styling."
   },
 
   // 6. Noel's WordPress Showcase (Live Deployed Showcase)
@@ -197,12 +298,12 @@ export const PROJECTS: Project[] = [
     id: "wordpress-showcase",
     title: "WordPress Architecture & Custom Theme Showcase",
     category: "Deployed Commercial Platform",
-    tagline: "Live demonstration of advanced WordPress CMS architecture, custom theme development, and Gutenberg blocks.",
+    tagline: "Live demonstration of advanced WordPress CMS architecture, custom theme development, and PHP templates.",
     description: "A comprehensive live demonstration platform highlighting advanced WordPress capabilities: custom theme creation, PHP template hierarchy, custom post types (CPTs), database query optimizations, and plugin integrations.",
     architecture: [
       "Custom WordPress theme developed from scratch utilizing PHP template hierarchy",
       "Custom Post Types (CPTs) and Advanced Custom Fields (ACF) data modeling",
-      "Optimized MySQL database queries with object caching to ensure rapid TTFB on shared hosting",
+      "Optimized MySQL database queries with object caching to ensure rapid TTFB",
       "Responsive Gutenberg block integration and accessible navigation menus"
     ],
     metrics: [
@@ -224,7 +325,7 @@ export const PROJECTS: Project[] = [
     title: "Dental Clinic Patient & Booking Management System",
     category: "Full-Stack System",
     tagline: "End-to-end clinic operations platform with role-based auth and automated appointment workflows.",
-    description: "A comprehensive clinical administration platform engineered to replace paper scheduling. Features patient self-service appointment booking, doctor schedule collision prevention, electronic treatment catalog, and transactional record keeping.",
+    description: "A clinical administration platform engineered to replace paper scheduling. Features patient self-service appointment booking, doctor schedule collision prevention, electronic treatment catalog, and transactional record keeping.",
     architecture: [
       "Relational MySQL schema with foreign-key constraints for patient histories and booking slots",
       "Session-based role authentication separating Patients, Staff, and Dental Practitioners",
@@ -307,41 +408,13 @@ if player.velocity.length() < MINIMUM_VELOCITY_THRESHOLD:
   }
 ];
 
-export const EXPERIENCES: Experience[] = [
-  {
-    role: "Freelance Full-Stack Developer",
-    organization: "Independent Practice",
-    location: "Malaybalay City, Bukidnon, PH",
-    period: "2021 — Present",
-    bullets: [
-      "Contributed to and deployed commercial web platforms including Everly Plumbing (Laravel/PostgreSQL), Everly Bookkeeping (Laravel/MySQL), Everly Pixel & Code (Next.js), Salt Lyf Cruises, and Deen International (Shopify).",
-      "Engineered full-stack solutions with relational databases (PostgreSQL, MySQL) enforcing strict transactional data integrity and index optimization.",
-      "Conducted performance audits, modernizing legacy layouts to mobile-responsive standards with sub-second paint times and 95+ Core Web Vitals.",
-      "Authored clean technical documentation, deployment guides, and client maintenance runbooks."
-    ],
-    technologies: ["Laravel", "Next.js", "React", "PHP", "PostgreSQL", "MySQL", "Shopify", "Tailwind CSS", "Git"]
-  },
-  {
-    role: "Bachelor of Science in Information Technology",
-    organization: "Bukidnon State University",
-    location: "Bukidnon, Philippines",
-    period: "Expected 2026",
-    bullets: [
-      "Major focus on Software Engineering, Advanced Database Systems, Systems Architecture, and Network Security.",
-      "Active contributor and lead developer for academic capstones, student GUI systems, and database projects.",
-      "Dean's lister / high academic standing in software development and computing theory."
-    ],
-    technologies: ["Java", "Python", "Data Structures", "Algorithms", "Relational Database Theory", "Computer Networks"]
-  }
-];
-
 export const JSON_LD_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": PERSONAL_INFO.name,
   "alternateName": PERSONAL_INFO.handle,
   "jobTitle": PERSONAL_INFO.title,
-  "description": PERSONAL_INFO.shortBio,
+  "description": PERSONAL_INFO.summary,
   "url": "https://spade-kun.github.io/",
   "sameAs": [
     PERSONAL_INFO.links.github,
@@ -349,12 +422,19 @@ export const JSON_LD_SCHEMA = {
     PERSONAL_INFO.links.instagram
   ],
   "knowsAbout": [
-    "Laravel Backend Engineering",
-    "Next.js and React Architecture",
-    "PostgreSQL & MySQL Relational Systems",
-    "Shopify E-Commerce Development",
-    "Java Desktop Software Engineering",
-    "Python Game Development"
+    "Full Stack Development",
+    "Next.js",
+    "Laravel",
+    "PHP",
+    "MySQL",
+    "Supabase",
+    "n8n Workflow Automation",
+    "Zoho CRM",
+    "Google Analytics",
+    "Angular",
+    "NestJS",
+    "Cisco CCNA Networking",
+    "Cisco Cybersecurity"
   ],
   "alumniOf": {
     "@type": "EducationalOrganization",
@@ -362,30 +442,40 @@ export const JSON_LD_SCHEMA = {
   }
 };
 
-export const LLMS_TXT = `# Noel Raterta Jr. (Spade-kun)
-> Full-Stack Developer & Systems Builder. Based in Malaybalay City, Bukidnon, Philippines.
-> Education: BS in Information Technology at Bukidnon State University (Class of 2026).
+export const LLMS_TXT = `# Noel C. Raterta Jr. (Spade-kun)
+> Full Stack Developer. Based in Malaybalay City, Bukidnon, Philippines.
+> Contact: ${PERSONAL_INFO.contactEmail} | ${PERSONAL_INFO.phone}
+> Education: BS in Information Technology at Bukidnon State University (2022 - 2026).
 
-## Core Competencies
-- Full-Stack Web Development: Laravel, Next.js, React, Node.js, PHP, Tailwind CSS, HTML5.
-- Databases: PostgreSQL, MySQL (schema architecture, transaction isolation, indexing), MongoDB.
-- Platforms: Shopify (Liquid, e-commerce stores), WordPress (custom themes, PHP), Squarespace.
-- Systems & Desktop Programming: Java (Swing, OOP, JDBC), C, Python (Pygame game loops).
+## Professional Summary
+${PERSONAL_INFO.summary}
 
-## Deployed Commercial Works
-1. Everly Plumbing (https://everlyplumbing.com): Laravel / Blade / PostgreSQL commercial platform.
-2. Everly Bookkeeping (https://everlybookkeeping.com): Laravel / Blade / MySQL financial platform.
-3. Deen International (https://deenintr.com): Shopify global e-commerce storefront.
-4. Salt Lyf Cruises (https://saltlyfcruises.com): Squarespace luxury marine tourism experience.
-5. WordPress Architecture Showcase (https://noel-wordpress-showcase.infinityfree.me/): Custom WordPress theme.
+## Core Competencies & Skills
+- Programming Languages: Java, C, Python, JavaScript, PHP, TypeScript, AngularJS.
+- Web & Frameworks: HTML, CSS, React, Next.js, Laravel, Node.js, Express, Angular, NestJS, REST APIs, WordPress, Squarespace.
+- Databases: MySQL, Supabase (PostgreSQL), MongoDB (NoSQL).
+- Automation & Analytics: n8n, Zoho CRM, Google Analytics Admin, Google Search Console, PageSpeed Insights.
+- IT Support & Networking: Git, GitHub, VS Code, Linux, Postman, Figma, Canva, Android Studio, MS Office, Windows OS support, basic networking (DNS, reverse proxy, VLAN).
+- Certifications: CCNA (Switching, Routing, and Wireless Essentials), Cisco Cybersecurity.
+- Awards & Honors: Hack4Gov Region X | First Runner-Up (2025).
 
-## Engineered Systems & Open Source
-1. Dental Clinic Management System (PHP/MySQL): https://github.com/Spade-kun/DENTAL_CLINIC_WEBSITE
-2. Student Enrollment GUI (Java/Swing/JDBC): https://github.com/Spade-kun/Student_Enrollment_GUI
-3. Move or Die 2D Survival Game (Python/Pygame): https://github.com/Spade-kun/MOVE_OR_DIE_GAME
+## Verified Experience
+1. Web Developer (Freelance Developer) | Jan 2023 - Present
+   - Developed 4 custom web applications (bookkeeping, plumbing) using Next.js, Laravel, PHP, Supabase.
+   - Migrated legacy layouts to modern, responsive frameworks.
+   - Integrated third-party APIs and databases (MySQL, Supabase) for secure authentication.
+   - Engineered API integrations for 5 client platforms resulting in 30% faster onboarding.
 
-## Contact & Links
-- Website: https://spade-kun.github.io/
-- GitHub: https://github.com/Spade-kun
-- Email: ${PERSONAL_INFO.contactEmail}
+2. Automation, CRM, Analytics, and Website Tools Practice | Jan 2024 - Present
+   - Automated business processes using n8n workflows for lead management and task routing.
+   - Leveraged Zoho CRM and Google Analytics for user engagement and conversion insights.
+   - Managed professional web presence for clients via Squarespace, optimizing for brand alignment and SEO.
+
+3. Intern - Technical Support and Web Development (Provincial ICT Division - PICTD Bukidnon) | Feb 2026 - May 2026
+   - Assisted in full-stack development tasks using Angular, NestJS, ORM, and MySQL for inventory and HRMIS.
+   - Supported network operations (DNS setup, reverse proxy, IP reassignment, VLAN basics, LAN repair).
+   - Performed IT support tasks (printer sharing, eTRACS installation, workstation maintenance).
+   - Prepared CCTV, cabinet, and command center layout documentation.
+
+4. BS Information Technology (Bukidnon State University) | 2022 - 2026
 `;

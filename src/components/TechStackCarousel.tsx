@@ -16,39 +16,35 @@ interface TechItem {
 const ALL_TECH: TechItem[] = [
   // Backend
   { name: "Laravel", category: "backend", level: "Core Specialty", detail: "MVC architectures, Eloquent ORM, Blade views, middleware", iconTag: "PHP" },
-  { name: "PHP 8+", category: "backend", level: "Production", detail: "Object-oriented backend services and transactional endpoints", iconTag: "PHP" },
-  { name: "Node.js", category: "backend", level: "Full-Stack", detail: "Async event loops, microservices, and server-side utilities", iconTag: "JS" },
-  { name: "Express", category: "backend", level: "APIs", detail: "Lightweight REST API routers and authentication flows", iconTag: "API" },
-  { name: "Java", category: "backend", level: "Systems / OOP", detail: "Swing UI, JDBC database drivers, and deterministic state", iconTag: "JVM" },
+  { name: "NestJS", category: "backend", level: "Enterprise", detail: "TypeScript modular architecture, dependency injection, ORM services", iconTag: "NEST" },
+  { name: "PHP", category: "backend", level: "Production", detail: "Object-oriented backend services and transactional endpoints", iconTag: "PHP" },
+  { name: "Node.js & Express", category: "backend", level: "Full-Stack", detail: "Async event loops, microservices, and server-side utilities", iconTag: "NODE" },
+  { name: "Java & C", category: "backend", level: "Systems / OOP", detail: "Swing UI, JDBC database drivers, memory architecture", iconTag: "JVM" },
   { name: "Python", category: "backend", level: "Systems", detail: "Pygame game loops, procedural math, and automation scripts", iconTag: "PY" },
   { name: "REST APIs", category: "backend", level: "Architecture", detail: "Contract-first endpoint design with strict JSON schemas", iconTag: "HTTP" },
 
   // Frontend
-  { name: "Next.js 15", category: "frontend", level: "Production", detail: "App Router, Server Components, dynamic edge rendering", iconTag: "NEXT" },
-  { name: "React 19", category: "frontend", level: "Production", detail: "Hooks, state machines, and component design systems", iconTag: "REACT" },
+  { name: "Next.js", category: "frontend", level: "Production", detail: "App Router, Server Components, dynamic edge rendering", iconTag: "NEXT" },
+  { name: "React", category: "frontend", level: "Production", detail: "Hooks, state machines, and component design systems", iconTag: "REACT" },
+  { name: "Angular & AngularJS", category: "frontend", level: "Full-Stack", detail: "Component-driven government inventory & HRMIS interfaces", iconTag: "NG" },
   { name: "TypeScript", category: "frontend", level: "Strict", detail: "End-to-end type contracts, interfaces, and compile-time safety", iconTag: "TS" },
   { name: "Tailwind CSS", category: "frontend", level: "Styling", detail: "Utility-first design tokens, responsive breakpoints, animations", iconTag: "CSS" },
-  { name: "Blade", category: "frontend", level: "SSR", detail: "Server-rendered reusable component hierarchy for Laravel", iconTag: "SSR" },
-  { name: "Liquid", category: "frontend", level: "E-Commerce", detail: "Shopify templating, custom storefront sections, cart flows", iconTag: "SHOP" },
-  { name: "HTML5 / Canvas", category: "frontend", level: "Core", detail: "Semantic DOM, particle visualizers, and web audio", iconTag: "DOM" },
+  { name: "HTML & CSS", category: "frontend", level: "Core", detail: "Semantic DOM, responsive design, and accessible styling", iconTag: "DOM" },
 
   // Databases
-  { name: "PostgreSQL", category: "database", level: "Relational", detail: "Relational modeling, composite indexing, and transactional integrity", iconTag: "SQL" },
   { name: "MySQL", category: "database", level: "Transactional", detail: "Client consultation schemas, foreign key cascade constraints", iconTag: "SQL" },
+  { name: "Supabase (PostgreSQL)", category: "database", level: "Cloud SQL", detail: "PostgreSQL engine, secure auth, row-level security, and APIs", iconTag: "SUPA" },
   { name: "MongoDB", category: "database", level: "NoSQL", detail: "Document stores and flexible JSON schema collections", iconTag: "NOSQL" },
   { name: "ACID Compliance", category: "database", level: "Guarantees", detail: "Atomic transaction blocks preventing ghost writes and race conditions", iconTag: "ACID" },
-  { name: "Schema Modeling", category: "database", level: "Architecture", detail: "Normalized ER diagrams and scalable entity relationships", iconTag: "DATA" },
-  { name: "Query Optimization", category: "database", level: "Performance", detail: "EXPLAIN plan analysis and indexing strategies for sub-50ms queries", iconTag: "PERF" },
+  { name: "Database Normalization", category: "database", level: "Architecture", detail: "Normalized ER diagrams and scalable entity relationships", iconTag: "DATA" },
 
   // Platforms & Automation
-  { name: "n8n Automation", category: "platforms", level: "AI & Workflows", detail: "Autonomous lead gen pipelines, webhooks, API enrichment, and CRM sync", iconTag: "N8N" },
-  { name: "Shopify", category: "platforms", level: "Commercial", detail: "Production storefront setup, theme tailoring, and checkout routing", iconTag: "ECOMM" },
-  { name: "Wix & Wix Studio", category: "platforms", level: "Web Builder", detail: "Bespoke studio layouts, custom interactions, and rapid client storefronts", iconTag: "WIX" },
-  { name: "Squarespace", category: "platforms", level: "Luxury Tourism", detail: "Bespoke styling and booking system configuration (Salt Lyf Cruises)", iconTag: "SQSP" },
-  { name: "WordPress CMS", category: "platforms", level: "Custom CMS", detail: "Custom theme development, PHP template overrides, and speed optimization", iconTag: "CMS" },
-  { name: "Git / GitHub", category: "platforms", level: "Workflows", detail: "Atomic commit patterns, pull request reviews, and continuous deployments", iconTag: "GIT" },
-  { name: "Postman", category: "platforms", level: "Testing", detail: "API test suites, header mocking, and endpoint contract validation", iconTag: "API" },
-  { name: "Linux / Bash", category: "platforms", level: "Infra", detail: "Server configuration, automated maintenance, and build pipelines", iconTag: "SH" },
+  { name: "n8n Workflows", category: "platforms", level: "AI & Automation", detail: "Autonomous lead management, task routing, webhooks, and sync", iconTag: "N8N" },
+  { name: "Zoho CRM & Analytics", category: "platforms", level: "CRM & Insights", detail: "User engagement analysis, pipeline routing, and conversion metrics", iconTag: "CRM" },
+  { name: "Squarespace & WordPress", category: "platforms", level: "CMS & Web Presence", detail: "Brand alignment, custom PHP themes, layouts, and SEO performance", iconTag: "WEB" },
+  { name: "Cisco Networking (CCNA)", category: "platforms", level: "Verified CCNA", detail: "DNS setup, reverse proxy, VLAN, LAN repair, switch troubleshooting", iconTag: "NET" },
+  { name: "Git & GitHub", category: "platforms", level: "Workflows", detail: "Atomic commit patterns, pull request reviews, and continuous deployments", iconTag: "GIT" },
+  { name: "Postman & Linux", category: "platforms", level: "Tooling", detail: "API testing, terminal scripting, device configuration, and support", iconTag: "CLI" },
 ];
 
 export const TechStackCarousel: React.FC = () => {
